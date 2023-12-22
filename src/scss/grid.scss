@@ -1,0 +1,102 @@
+@use "sass:math";
+@import 'vars';
+
+// 0-XS
+:root{
+    --gap: 32px;
+}
+.container{
+    width: 100%;
+    margin: 0 auto;
+    padding-left: calc(var(--gap)/2);
+    padding-right: calc(var(--gap)/2);
+}
+.container .row{
+
+    width: calc(100% + var(--gap));
+    // margin: 0 calc($GAP/-2);
+    // align-items: stretch;
+}
+
+// @media screen and (min-width: $_XS) {
+    $colcnt: 3;
+    $onecol: calc(100% / $colcnt);
+    @for $i from 1 through $colcnt {
+        .col-#{$i}{ width: calc($onecol * $i); }
+    }
+// }
+
+// @media screen and (min-width: $_SM) { 
+//     $colcnt: 4; $onecol: calc(100% / $colcnt);
+//     @for $i from 1 through $colcnt {
+//         .col-sm-#{$i}{ width: $onecol * $i; }
+//     }    
+// }
+
+// @media screen and (min-width: $_MD) { 
+//     $colcnt: 4; $onecol: calc(100% / $colcnt);
+//     @for $i from 1 through $colcnt {
+//         .col-md-#{$i}{ width: $onecol * $i; }
+//     }    
+// }
+
+// @media screen and (min-width: $_LG) { 
+//     $colcnt: 7; $onecol: calc(100% / $colcnt);
+//     @for $i from 1 through $colcnt {
+//         .col-lg-#{$i}{ width: $onecol * $i; }
+//     }    
+// }
+
+// @each $name, $size in $_BP {
+//     @media screen and (min-width: $size){
+//         .container{
+//             max-width: $size;
+//         }
+//     }
+// }
+
+
+@each $name, $min, $size, $cols in $_BP{
+    @media screen and (min-width: $min) { 
+        $colcnt: $cols; $onecol: calc(100% / $colcnt);
+        @for $i from 1 through $colcnt {
+            .col-#{$name}-#{$i}{ width: $onecol * $i; }
+        }    
+        .col-#{$name}-auto{ width: auto; }
+    }
+    @media screen and (min-width: $min){
+        .container{
+            max-width: $size;
+        }
+
+    }
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-left: calc(var(--gap) / -2);
+    margin-right: calc(var(--gap) / -2);
+    row-gap: var(--gap);
+    position: relative;
+    &.border-top:before{
+            content: ''; display: block; width: calc(100% - var(--gap)); height: 0;
+            position: absolute; top: 0; left: calc(var(--gap) / 2);
+            border-top: 1px solid var(--opacitydark-20);
+        
+    }
+    &.border-bottom:after{
+        content: ''; display: block; width: calc(100% - var(--gap)); height: 0;
+        position: absolute; bottom: 0; left: calc(var(--gap) / 2);
+        border-bottom: 1px solid var(--opacitydark-20);
+    }
+}
+.row > [class^="col-"],.row > [class*=" col-"]{
+    transition: .3s;
+    padding-left: calc(var(--gap) / 2);
+    padding-right: calc(var(--gap) / 2);
+    box-sizing: border-box;
+}
+

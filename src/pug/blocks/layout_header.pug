@@ -1,0 +1,26 @@
+header(data-theme='light')
+    .container
+        .layoutHeader
+            .d-flex.g-3
+                a.layoutHeader_logo(href="/")
+                .d-none.d-sm-flex.g-2.align_items-center
+                    .layoutHeader_phone
+                        | +7 (495) 775 35 35
+                    a.button.btn.btn-secondary.button--calypso
+                        i.icon-Pluse
+                        span Выбрать клуб
+            .d-none.d-lg-flex.g-3
+                a.link.link-accent Расписание
+                a.link.link-accent Клубные карты
+                a.link.link-accent Личный кабинет
+                a.link.link-accent Контакты
+            .d-flex.g-2
+                .d-none.d-sm-flex.g-1
+                    a.control.control-social(href="//vk.com")
+                        i.icon-VK
+                    a.control.control-social(href="//vk.com")
+                        i.icon-Whatsapp
+                a.button.btn.btn-primary.button--calypso.d-flex.d-lg-none(data-popup="mobile_nav")
+                    i.icon-Menu.d-active-none
+                    i.icon-Close.d-none.d-active-inline-block
+                    span Меню

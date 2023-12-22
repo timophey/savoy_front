@@ -1,0 +1,32 @@
+$_AR: (
+    ("xs",0,360,calc(1/1)), // ("xs",0,$_XS,3),
+    ("sm",$_SM,$_SM,calc(9/5)),
+    ("md",$_MD,$_MD,calc(24/10)),
+    ("lg",$_LG,$_LG,calc(16/6)),
+    ("xl",$_XL,$_XL,calc(1616/600))
+    );
+.main_article{
+    &_picture{
+        // overflow: hidden;
+        position: relative;
+        aspect-ratio: 1/1;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: 50% 20%;
+        }
+        .bages{
+            position: absolute;
+            top:0;left:0;
+        }
+    }
+    @each $name, $min, $size, $ratio in $_AR{
+        @media screen and (min-width: $min){
+            &_picture{
+                aspect-ratio: $ratio;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,11 @@
+// @import 'vars';
+
+[class^="br-"],[class*=" br-"]{
+    overflow: hidden;
+}
+
+@each $x, $n in $_BR{
+    .br-#{$x}{
+        border-radius: #{$n};
+    }
+}

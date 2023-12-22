@@ -1,0 +1,26 @@
+.popup{
+    position: fixed;
+    top:64px; left:0; z-index: 10;
+    width: 100vw;
+    height: calc(100% - 64px);
+    // background: red;
+    overflow: auto;
+    transition: all .3s;
+    &,&[data-opened="0"]{
+        transform: translateX(-100vw);
+    }
+    &[data-opened="1"]{
+        transform: translateX(0);
+    }
+
+
+    &_mobile_nav{
+        // margin-top: 64px;
+        min-height: 100%;
+    }
+    .csinput{
+        width: 100%;
+    }
+    // .form_wellcome_fields{
+    // }
+}

@@ -1,0 +1,68 @@
+//- - var items = [
+//-     {
+//-         name: 'Групповые занятия по авторской методике',
+//-         color: '#DEF1DE',
+//-         image: 'images/faq1.png',
+//-     },
+//-     {
+//-         name: 'Термальные комплексы',
+//-         color: '#DEF0F1',
+//-         image: 'images/faq2.jpeg',
+//-     },
+//-     {
+//-         name: 'Атмосферные бассейны',
+//-         color: '#DEE9F1',
+//-         image: 'images/faq3.png',
+//-     },
+//-     {
+//-         name: 'Кабинет фитнес-диагностики',
+//-         color: '#F1DEED',
+//-         image: 'images/faq4.png',
+//-     },
+//-     {
+//-         name: 'Детский клуб',
+//-         color: '#EFF1DE',
+//-         image: 'images/faq5.png',
+//-     },
+//-     {
+//-         name: 'Зоны релаксации, спа, уход',
+//-         color: '#DEF1E8',
+//-         image: 'images/faq6.png',
+//-     },
+//-     {
+//-         name: 'Инновационные тренажеры',
+//-         color: '#DEDEF1',
+//-         image: 'images/faq7.png',
+//-     }
+//- ];
+- var items = [{"name":"Групповые занятия по авторской методике","color":"#DEF1DE","image":"images/faq1.png"},{"name":"Термальные комплексы","color":"#DEF0F1","image":"images/faq2.jpeg"},{"name":"Атмосферные бассейны","color":"#DEE9F1","image":"images/faq3.png"},{"name":"Кабинет фитнес-диагностики","color":"#F1DEED","image":"images/faq4.png"},{"name":"Детский клуб","color":"#EFF1DE","image":"images/faq5.png"},{"name":"Зоны релаксации, спа, уход","color":"#DEF1E8","image":"images/faq6.png"},{"name":"Инновационные тренажеры","color":"#DEDEF1","image":"images/faq7.png"}];
+.main_faq(data-theme="dark")
+    .container
+        .row.border-top
+        .row.pb-10
+            .col-3.col-md-2.col-lg-3
+                .d-flex.align_items-center.mt-4.mb-3
+                    i.icon-Point
+                    .text-uppercase.fs-10.fw-500 Что делает нас лучшими
+                .d-flex.flex-column.g-3.align_items-flex-start
+                    h2.h4.fs-sm-40.mt-0.mb-0 Quis autem vel eum iure reprehenderit
+                    p Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma
+                    a.btn.btn-secondary.button.button--calypso
+                        span о компании
+            .col-3.col-md-2.col-lg-4
+                .accordion
+                    each item in items
+                        .spoiler(data-color=item.color)
+                            .spoiler-head
+                                .spoiler-title=`${item.name}`
+                                .spoiler-control.control-dark.control
+                                    i.icon-Pluse
+                            .spoiler-body
+                                .article_picture.br-16
+                                    img(src=item.image, alt="alt")
+                                .row.py-2
+                                    .col-sm-2
+                                        p Центр спорта и здоровья Savoy Wellness располагает всем необходимым для поддержания гармоничной физической формы. Вашему вниманию предлагается более 10 видов авторских групповых тренировок и возможность индивидуальных занятий с тренером. 
+                                    .col-sm-2
+                                        p Кроме того, мы приглашаем вас в фитнес-зал премиального уровня с тренажёрами последнего поколения Precor и Hoist с возможностью персонализации, выходом в интернет и технологией Run TV.
+

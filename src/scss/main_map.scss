@@ -1,0 +1,27 @@
+.main_map{
+    
+    .br-16{
+        border: 1px solid var(--opacitydark-20, rgba(0, 0, 0, 0.20));
+    }
+    &_wrapper{
+        position: relative;
+    }
+    &_back{
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &_front{
+        min-height: 400px;
+    }
+
+    .form-field{
+        .csinput{
+            width: 100%;
+        }
+    }
+}

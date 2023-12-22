@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SVG CSS sprite preview | svg-sprite</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                color: #666;
+                background: #fafafa;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1em;
+                line-height: 1.4;
+            }
+
+            header {
+                display: block;
+                padding: 3em 3em 2em;
+                background-color: #fff;
+            }
+
+            header p {
+                margin: 2em 0 0;
+            }
+
+            section {
+                border-top: 1px solid #eee;
+                padding: 2em 3em 0;
+            }
+
+            section ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            section li {
+                display: inline-block;
+                background-color: #fff;
+                position: relative;
+                margin: 0 2em 2em 0;
+                vertical-align: top;
+                border: 1px solid #ccc;
+                padding: 1em 1em 3em;
+                cursor: default;
+            }
+
+            .icon-box {
+                margin: 0;
+                width: 144px;
+                height: 144px;
+                position: relative;
+                background: #ccc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath fill='%23fff' d='M6 0h6v6H6zM0 6h6v6H0z'/%3E%3C/svg%3E") top left repeat;
+                border: 1px solid #ccc;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            .icon {
+                display: inline-block;
+            }
+
+            h1 {
+                margin-top: 0;
+            }
+
+            h2 {
+                margin: 0;
+                padding: 0;
+                font-size: 1em;
+                font-weight: 400;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                position: absolute;
+                left: 1em;
+                right: 1em;
+                bottom: 1em;
+            }
+
+            footer {
+                display: block;
+                margin: 0;
+                padding: 0 3em 3em;
+            }
+
+            footer p {
+                margin: 0;
+                font-size: .7em;
+            }
+
+            footer a {
+                color: #0f7595;
+                margin-left: 0;
+            }
+
+            i {
+                text-indent: 200%;
+                white-space: nowrap;
+                overflow: hidden;
+                display: inline-block;
+                background-size: 120px 96px !important;
+            }
+        </style>
+
+<!--
+Sprite CSS
+====================================================================================================
+This is an all-in-one inline version of the CSS necessary to use the SVG sprite.
+-->
+
+<style>
+.icon-Arrow-bottom {
+    background: url("svg/sprite.css-31fed895.svg") 0 0 no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon-Arrow-left {
+    background: url("svg/sprite.css-31fed895.svg") 25% 0 no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon-Arrow-right {
+    background: url("svg/sprite.css-31fed895.svg") 0 33.333333333333336% no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon-Arrow-top {
+    background: url("svg/sprite.css-31fed895.svg") 25% 33.333333333333336% no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon-Arrow-top-left {
+    background: url("svg/sprite.css-31fed895.svg") 50% 0 no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon-Arrow-top-right {
+    background: url("svg/sprite.css-31fed895.svg") 50% 33.333333333333336% no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon-Basket {
+    background: url("svg/sprite.css-31fed895.svg") 0 66.66666666666667% no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon-Chevron-bottom {
+    background: url("svg/sprite.css-31fed895.svg") 25% 66.66666666666667% no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon-Chevron-top {
+    background: url("svg/sprite.css-31fed895.svg") 50% 66.66666666666667% no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon-Close {
+    background: url("svg/sprite.css-31fed895.svg") 75% 0 no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon-Marker {
+    background: url("svg/sprite.css-31fed895.svg") 75% 33.333333333333336% no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon-Menu {
+    background: url("svg/sprite.css-31fed895.svg") 75% 66.66666666666667% no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon-Play {
+    background: url("svg/sprite.css-31fed895.svg") 0 100% no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon-Pluse {
+    background: url("svg/sprite.css-31fed895.svg") 25% 100% no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon-Point {
+    background: url("svg/sprite.css-31fed895.svg") 50% 100% no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon-VK {
+    background: url("svg/sprite.css-31fed895.svg") 75% 100% no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon-Whatsapp {
+    background: url("svg/sprite.css-31fed895.svg") 100% 0 no-repeat;
+    width: 24px;
+    height: 24px;
+}
+</style>
+
+<!--
+====================================================================================================
+-->
+
+    </head>
+    <body>
+        <header>
+            <h1>SVG CSS sprite preview</h1>
+            <p>This preview features the generated SVG file as a conventional CSS sprite. The shapes are displayed as background images of several <code>&lt;i&gt;</code> elements.</p>
+        </header>
+        <section>
+
+<!--
+Conventional CSS sprite
+====================================================================================================
+This technique uses CSS classes to display portions of the sprite as background image of
+appropriately sized elements.
+-->
+
+            <ul>
+             <li title="Arrow-bottom">
+                    <div class="icon-box">
+                        <i class="icon-Arrow-bottom">Arrow-bottom</i>
+                    </div>
+                    <h2>Arrow-bottom, </h2>
+                </li>
+             <li title="Arrow-left">
+                    <div class="icon-box">
+                        <i class="icon-Arrow-left">Arrow-left</i>
+                    </div>
+                    <h2>Arrow-left, </h2>
+                </li>
+             <li title="Arrow-right">
+                    <div class="icon-box">
+                        <i class="icon-Arrow-right">Arrow-right</i>
+                    </div>
+                    <h2>Arrow-right, </h2>
+                </li>
+             <li title="Arrow-top">
+                    <div class="icon-box">
+                        <i class="icon-Arrow-top">Arrow-top</i>
+                    </div>
+                    <h2>Arrow-top, </h2>
+                </li>
+             <li title="Arrow-top-left">
+                    <div class="icon-box">
+                        <i class="icon-Arrow-top-left">Arrow-top-left</i>
+                    </div>
+                    <h2>Arrow-top-left, </h2>
+                </li>
+             <li title="Arrow-top-right">
+                    <div class="icon-box">
+                        <i class="icon-Arrow-top-right">Arrow-top-right</i>
+                    </div>
+                    <h2>Arrow-top-right, </h2>
+                </li>
+             <li title="Basket">
+                    <div class="icon-box">
+                        <i class="icon-Basket">Basket</i>
+                    </div>
+                    <h2>Basket, </h2>
+                </li>
+             <li title="Chevron-bottom">
+                    <div class="icon-box">
+                        <i class="icon-Chevron-bottom">Chevron-bottom</i>
+                    </div>
+                    <h2>Chevron-bottom, </h2>
+                </li>
+             <li title="Chevron-top">
+                    <div class="icon-box">
+                        <i class="icon-Chevron-top">Chevron-top</i>
+                    </div>
+                    <h2>Chevron-top, </h2>
+                </li>
+             <li title="Close">
+                    <div class="icon-box">
+                        <i class="icon-Close">Close</i>
+                    </div>
+                    <h2>Close, </h2>
+                </li>
+             <li title="Marker">
+                    <div class="icon-box">
+                        <i class="icon-Marker">Marker</i>
+                    </div>
+                    <h2>Marker, </h2>
+                </li>
+             <li title="Menu">
+                    <div class="icon-box">
+                        <i class="icon-Menu">Menu</i>
+                    </div>
+                    <h2>Menu, </h2>
+                </li>
+             <li title="Play">
+                    <div class="icon-box">
+                        <i class="icon-Play">Play</i>
+                    </div>
+                    <h2>Play, </h2>
+                </li>
+             <li title="Pluse">
+                    <div class="icon-box">
+                        <i class="icon-Pluse">Pluse</i>
+                    </div>
+                    <h2>Pluse, </h2>
+                </li>
+             <li title="Point">
+                    <div class="icon-box">
+                        <i class="icon-Point">Point</i>
+                    </div>
+                    <h2>Point, </h2>
+                </li>
+             <li title="VK">
+                    <div class="icon-box">
+                        <i class="icon-VK">VK</i>
+                    </div>
+                    <h2>VK, </h2>
+                </li>
+             <li title="Whatsapp">
+                    <div class="icon-box">
+                        <i class="icon-Whatsapp">Whatsapp</i>
+                    </div>
+                    <h2>Whatsapp, </h2>
+                </li>
+            </ul>
+
+<!--
+====================================================================================================
+-->
+
+        </section>
+        <footer>
+            <p>Generated at Thu, 21 Dec 2023 06:17:31 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+        </footer>
+    </body>
+</html>

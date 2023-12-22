@@ -1,0 +1,15 @@
+$_ICO: ('Arrow-bottom', 'Arrow-top-left');
+
+[class^="icon-"],[class*=" icon-"]{
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    // background-color: red;
+}
+
+// @each $name in $_ICO{
+//     .icon-#{$name}{
+//         background-image: url(../images/icons/sprite.svg##{$name});
+//         background-size: 24px 24px;
+//     }
+// }

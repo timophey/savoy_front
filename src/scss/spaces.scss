@@ -1,0 +1,156 @@
+$_base: 8;
+$_range: 1,2,3,4,5;
+$_spaces: (
+    ('half',4px),
+    (1,8px),
+    (2,16px),
+    (3,24px),
+    (4,32px),
+    (5,40px),
+    (6,48px),
+    (8,64px),
+    (10,80px),
+    (auto,auto),
+    (0,0)
+);
+
+@each $x, $n in $_spaces{
+    .g-#{$x}{
+        gap: $n;
+    }
+    .cg-#{$x}{
+        --gap: #{$n};
+    }
+    .m-#{$x}{
+        margin: $n;
+    }
+    .mt-#{$x}{
+        margin-top: $n;
+    }
+    .mb-#{$x}{
+        margin-bottom: $n;
+    }
+    .mx-#{$x}{
+        margin-left: $n;
+        margin-right: $n;
+    }
+    .my-#{$x}{
+        margin-top: $n;
+        margin-bottom: $n;
+    }
+    .p-#{$x}{
+        padding: $n;
+    }
+    .pt-#{$x}{
+        padding-top: $n;
+    }
+    .pb-#{$x}{
+        padding-bottom: $n;
+    }
+    .px-#{$x}{
+        padding-left: $n;
+        padding-right: $n;
+    }
+    .py-#{$x}{
+        padding-top: $n;
+        padding-bottom: $n;
+    }
+}
+@each $x, $n in $_FS{
+    .fs-#{$x}{
+        font-size: #{$x}px;
+        line-height: #{$n}px;
+    }
+    .lh-#{$n}{
+        line-height: #{$n}px;
+    }
+}
+
+@each $x, $n in $_FF{
+    .ff-#{$x}{
+        font-family: #{$n};
+    }
+}
+
+@each $w in $_FW{
+    .fw-#{$w}{
+        font-weight: #{$w};
+    }
+}
+
+@each $w in $_FST{
+    .fst-#{$w}{
+        font-style: #{$w};
+    }
+}
+
+@each $w in $_TT{
+    .text-#{$w}{
+        text-transform: #{$w};
+    }
+}
+
+@each $a in $_FA{
+    .text-#{$a}{
+        text-align: $a;
+    }
+}
+
+
+@each $name, $min, $size, $cols in $_BP{
+    @media screen and (min-width: $min){
+        // spaces
+        @each $x, $n in $_spaces{
+            .g-#{$name}-#{$x}{
+                gap: $n;
+            }
+            .cg-#{$name}-#{$x}{
+                --gap: #{$n};
+            }
+        
+            .mb-#{$name}-#{$x}{
+                margin-bottom: $n;
+            }
+            .mt-#{$name}-#{$x}{
+                margin-top: $n;
+            }
+            .mx-#{$name}-#{$x}{
+                margin-left: $n;
+                margin-right: $n;
+            }
+            .my-#{$name}-#{$x}{
+                margin-top: $n;
+                margin-bottom: $n;
+            }
+            .pt-#{$name}-#{$x}{
+                padding-top: $n;
+            }
+            .pb-#{$name}-#{$x}{
+                padding-bottom: $n;
+            }
+            .px-#{$name}-#{$x}{
+                padding-left: $n;
+                padding-right: $n;
+            }
+            .py-#{$name}-#{$x}{
+                padding-top: $n;
+                padding-bottom: $n;
+            }
+        }
+        // font-size
+        @each $x, $n in $_FS{
+            .fs-#{$name}-#{$x}{
+                font-size: #{$x}px;
+                line-height: #{$n}px;
+            }
+        }
+        // text-align
+        // @each $a in $_FA{
+        //     .text-#{$name}-#{$a}{
+        //         text-align: $a;
+        //     }
+        // }
+        
+    }
+}
+

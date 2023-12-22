@@ -1,0 +1,48 @@
+body{
+    margin: 0;
+    &[data-popup-opened]{
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
+p:last-child{
+    margin-bottom: 0;
+}
+p:first-child{
+    margin-top: 0;
+}
+
+
+[data-theme="light"]{
+    background-color: var(--black);
+    color: var(--white);
+}
+[data-theme="dark"]{
+    background-color: var(--white);
+    color: var(--black);
+}
+
+// $_FS
+
+.siteWrapper{
+    > header{
+        position: sticky; top: 0; z-index: 100;
+        &[data-theme="dark"]{
+            box-shadow: 0 2px 5px #0002;
+        }
+    }
+}
+
+@import 'layout_header';
+@import 'layout_footer';

@@ -1,0 +1,57 @@
+.accordion{
+
+}
+.spoiler{
+    --bh: 0;
+    &-head{
+        display: flex;
+        padding: 16px 0px;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+    }
+    &-body{
+        
+    }
+    &-title{
+        font: 24px/32px 'Playfair Display';
+        text-overflow: ellipsis;
+        flex-grow: 1;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    &-control{
+        flex-shrink: 1;
+    }
+    &-initialized{
+        // --scroll: 72;
+        --scroll: auto;
+    }
+    &-initialized  &-body{
+        max-height: calc(var(--bh) * 1px);
+        overflow: hidden;
+        transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    .control, .control:hover, .control:hover:not(:active):not(.disabled){
+        padding: 7px;
+        margin: 0px;
+        transition: .3s;
+    }
+    &.active .control{
+        transform: rotate(45deg);
+        border-color: var(--black);
+        background-color: var(--black);
+        i{
+            filter: invert(1);
+        }
+    }
+    &:not(.active){
+        border-bottom: 1px solid var(--opacitydark-20, rgba(0, 0, 0, 0.20));
+    }
+    &.active{
+        border-bottom: 1px solid var(--black);
+    }
+    // :hover{
+    //     
+    // }
+}

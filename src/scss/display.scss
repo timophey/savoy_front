@@ -1,0 +1,65 @@
+@import 'vars';
+
+@each $d in $_DISPLAYS{
+    .d-#{$d}{
+        display: $d;
+    }
+    .active .d-active-#{$d}{
+        display: $d;
+    }
+}
+
+
+@each $name, $min, $size, $cols in $_BP{
+    @media screen and (min-width: $min){
+        @each $d in $_DISPLAYS{
+            .d-#{$name}-#{$d}{
+                display: $d;
+            }
+        }
+    }
+}
+
+// flex
+
+@each $d in $_direction{
+    .flex-#{$d}{flex-direction: $d;}
+}
+
+@each $w in $_wrap{
+    .flex-#{$w}{flex-wrap: $w;}
+}
+
+@each $a in $_align_items{
+    .align_items-#{$a}{align-items: $a;}
+}
+
+@each $a in $_justify_content{
+    .justify-#{$a}{justify-content: $a;}
+}
+
+@each $name, $min, $size, $cols in $_BP{
+    @media screen and (min-width: $min){
+        @each $d in $_direction{
+            .flex-#{$name}-#{$d}{flex-direction: $d;}
+        }
+        
+        @each $w in $_wrap{
+            .flex-#{$name}-#{$w}{flex-wrap: $w;}
+        }
+        
+        @each $a in $_align_items{
+            .align_items-#{$name}-#{$a}{align-items: $a;}
+        }
+        
+        @each $a in $_justify_content{
+            .justify-#{$name}-#{$a}{justify-content: $a;}
+        }
+    }
+}
+
+// .h-100,.w-100{
+//     box-sizing: border-box;
+// }
+.h-100{height: 100%;}
+.w-100{width: 100%;}

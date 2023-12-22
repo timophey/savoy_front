@@ -1,0 +1,267 @@
+.btn{
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 40px;
+    border: none;
+    padding: 7px;
+    height: 24px;
+    box-sizing:content-box;
+    vertical-align: top;
+    // gap: 8px;
+    cursor: pointer;
+    i{
+        border-radius: 50%;
+        z-index: 1;
+        transition: all 0.4s cubic-bezier(0.1, 0, 0.3, 1) 0s;
+        background-color: var(--color-second);
+        &:first-child{
+            // margin-left: 8px;
+        }
+    }
+    span{
+        padding-right: 8px;
+        padding-left: 8px;
+        // &:only-child{
+        // }
+    }
+
+    transition: none;
+    --color-first: var(--black, #000);
+    --color-second: var(--white, #FFF);
+    --color-third: var(--opacitydark-20, rgba(0, 0, 0, 0.20));
+    background-color: var(--color-first);
+    color: var(--color-second);
+    border: 1px solid var(--color-first);
+    &:not(:disabled):hover:not(:active){
+        border: 1px solid var(--color-third);
+    }
+    &.button--calypso:not(:disabled):hover:not(:active){
+        background-color: var(--color-third);
+    }
+    &:not(.button--calypso):not(:disabled):hover:not(:active){
+        background-color: var(--color-second);
+    }
+    &:disabled{
+        cursor: not-allowed;
+    }
+    &:active:not(:disabled){
+        border: 1px solid var(--color-third);
+        background-color: var(--color-third);
+    }
+
+    &-dark, [data-theme=dark] &{
+        &.btn-primary{
+            --color-first: var(--black, #000);
+            --color-second: var(--white, #FFF);
+            --color-third: var(--opacitydark-20, rgba(0, 0, 0, 0.20));
+        
+            // background-color: var(--black, #000);
+            // color: var(--white, #FFF);
+            // border: 1px solid var(--black, #000);
+            padding: 7px; // 1+1 border !
+            // padding: 7px 15px 7px 7px;
+            // i{
+            //     background-color: var(--white, #FFF);
+            //     filter: invert(1);
+            // }
+            &:not(:disabled):hover:not(:active){
+                // border: 1px solid var(--opacitydark-20, rgba(0, 0, 0, 0.20));
+        
+                i{
+                    filter: invert(1);
+                }
+            }
+        }
+        &.btn-primary:disabled{
+            // --color-first: red;
+            --color-first: var(--opacitydark-20, rgba(0, 0, 0, 0.20));
+            border: var(--color-first);
+            span{
+                color: var(--white);
+                mix-blend-mode: initial;
+            }
+        }
+        &.btn-secondary{
+            --color-first: var(--white, #FFF);
+            --color-second: var(--black, #000);
+            --color-third: var(--opacitydark-20, rgba(0, 0, 0, 0.20));;
+            border: 1px solid var(--opacitydark-20, rgba(0, 0, 0, 0.20));
+            i{
+                background-color: var(--color-first);
+                filter: invert(1);  
+            }
+            &:hover:not(:active):not(:disabled){
+                i{
+                    filter: invert(0);
+                }
+            }
+        }
+        &.btn-secondary:disabled{
+            --color-first: var(--opacitydark-5, #FFF);
+            --color-second: var(--black, #000);
+            --color-third: var(--opacitydark-20, rgba(0, 0, 0, 0.20));;
+            border: 1px solid var(--color-third);
+            i{
+                background-color: var(--opacitylight-20, #FFF);
+            }
+            span{
+                color: var(--opacitylight-20, #FFF);
+            }
+        }
+    }
+    &-light, [data-theme=light] &{
+        &.btn-primary{
+            --color-first: var(--white);
+            --color-second: var(--black);
+            --color-third: var(--opacitylight-20);
+            i{
+                background-color: var(--color-first);
+                filter: invert(1);
+            }
+            &:hover:not(:active){
+                i{
+                    filter: invert(0);
+                }
+            }
+            &:disabled{
+                --color-first: var(--opacitylight-20);
+                --color-second: var(--opacitylight-40);
+                i{
+                    background-color: var(--color-second);
+                    filter: invert(0);
+                }
+            }
+        }
+        
+        &.btn-secondary{
+            --color-first: var(--black);
+            --color-second: var(--white);
+            --color-third: var(--opacitylight-20);
+            border: 1px solid var(--color-third);
+            &:hover:not(:active):not(:disabled){
+                i{
+                    filter: invert(1);
+                }
+            }
+            &:disabled{
+                --color-second: var(--opacitylight-20);
+                span{
+                    color: var(--opacitylight-20);
+                }
+            }
+        }
+    }
+}
+// .btn:hover:not(:active){
+//     transition: background-color 0.4s cubic-bezier(0.1, 0, 0.3, 1) 0.4s;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+// https://codepen.io/vijendrajangid/pen/oNZXrxd
+
+.button--calypso:hover:not(:active){
+    // border: 1px solid var(--opacitylight-20, rgba(0, 0, 0, 0.20));
+    // background-color: 1px solid var(--opacitylight-20, rgba(0, 0, 0, 0.20));
+    transition: background-color 0.4s cubic-bezier(0.1, 0, 0.3, 1) 0.4s;
+    &.btn-secondary.btn-dark{
+        // transition-delay: 0s;
+        transition-duration: 0s;
+        border: 1px solid var(--opacitydark-20, rgba(0, 0, 0, 0.2));
+    }
+}
+
+.button{
+    position: relative;
+}
+
+.button::before,
+.button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.button--calypso {
+    overflow: hidden;
+    // font-family: freight-display-pro, serif;
+    // font-size: 1.15rem;
+    // border-radius: 0.85rem;
+    color: #fff;
+  }
+  
+  .button--calypso span {
+    display: block;
+    position: relative;
+    mix-blend-mode: difference;
+    z-index: 5;
+  }
+  
+//   .button--calypso:hover:not(:active) span {
+//     animation: MoveScaleUpInitial 0.3s forwards, MoveScaleUpEnd 0.3s forwards 0.3s;
+//   }
+  
+  @keyframes MoveScaleUpInitial {
+    to {
+      transform: translate3d(0, -105%, 0) scale3d(1, 2, 1);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes MoveScaleUpEnd {
+    from {
+      transform: translate3d(0, 100%, 0) scale3d(1, 2, 1);
+      opacity: 0;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+  
+  .button--calypso:not(:disabled)::before {
+    content: "";
+    background: var(--color-second);
+    width: 120%;
+    height: 0;
+    padding-bottom: 120%;
+    // top: -110%;
+    top: -70%;
+    left: -10%;
+    border-radius: 50%;
+    transform: translate3d(0, 68%, 0) scale3d(0, 0, 0);
+  }
+  .button--calypso:not(:disabled):active:before{
+    background: var(--color-first);
+  }
+  
+  .button--calypso:hover::before { // :not(:active)
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+  }
+  
+  .button--calypso:not(:disabled)::after {
+    content: "";
+    background: var(--color-second);
+    transform: translate3d(0, -100%, 0);
+    transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+  }
+  
+  .button--calypso:hover:not(:active)::after {
+    transform: translate3d(0, 0, 0);
+    transition-duration: 0.05s;
+    transition-delay: 0.4s;
+    transition-timing-function: linear;
+  }

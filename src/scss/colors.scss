@@ -1,0 +1,83 @@
+:root {
+    --black: rgba(0, 0, 0, 1);
+    --white: rgba(255, 255, 255, 1);
+    --primarybrown: rgba(226, 201, 161, 1);
+    --opacitydark-90: rgba(0, 0, 0, 0.9);
+    --opacitydark-80: rgba(0, 0, 0, 0.8);
+    --opacitydark-70: rgba(0, 0, 0, 0.7);
+    --opacitydark-60: rgba(0, 0, 0, 0.6);
+    --opacitydark-50: rgba(0, 0, 0, 0.5);
+    --opacitydark-40: rgba(0, 0, 0, 0.4);
+    --opacitydark-30: rgba(0, 0, 0, 0.3);
+    --opacitydark-20: rgba(0, 0, 0, 0.2);
+    --opacitydark-10: rgba(0, 0, 0, 0.1);
+    --opacitydark-5: rgba(0, 0, 0, 0.05);
+    --opacitylight-90: rgba(255, 255, 255, 0.9);
+    --opacitylight-80: rgba(255, 255, 255, 0.8);
+    --opacitylight-70: rgba(255, 255, 255, 0.7);
+    --opacitylight-60: rgba(255, 255, 255, 0.6);
+    --opacitylight-50: rgba(255, 255, 255, 0.5);
+    --opacitylight-40: rgba(255, 255, 255, 0.4);
+    --opacitylight-30: rgba(255, 255, 255, 0.3);
+    --opacitylight-20: rgba(255, 255, 255, 0.2);
+    --opacitylight-10: rgba(255, 255, 255, 0.1);
+    --opacitylight-5: rgba(255, 255, 255, 0.05);
+    --actioninfo-light: rgba(54, 151, 241, 0.15);
+    --actioninfo-light-hover: rgba(54, 151, 241, 0.3);
+    --actioninfo-medium: rgba(54, 151, 241, 0.3);
+    --actioninfo-medium-hover: rgba(54, 151, 241, 0.5);
+    --actioninfo-heavy: rgba(52, 139, 220, 1);
+    --actioninfo-heavy-hover: rgba(48, 114, 179, 1);
+    --actionpositive-light: rgba(50, 186, 118, 0.15);
+    --actionpositive-light-hover: rgba(50, 186, 118, 0.3);
+    --actionpositive-medium: rgba(50, 186, 118, 0.3);
+    --actionpositive-medium-hover: rgba(50, 186, 118, 0.5);
+    --actionpositive-heavy: rgba(48, 170, 110, 1);
+    --actionpositive-heavy-hover: rgba(45, 139, 93, 1);
+    --actionwarning-light: rgba(255, 190, 92, 0.3);
+    --actionwarning-light-hover: rgba(255, 190, 92, 0.5);
+    --actionwarning-medium: rgba(255, 190, 92, 0.7);
+    --actionwarning-medium-hover: rgba(255, 190, 92, 0.9);
+    --actionwarning-heavy: rgba(255, 190, 92, 1);
+    --actionwarning-heavy-hover: rgba(211, 158, 80, 1);
+    --actionneutral-light: rgba(0, 0, 0, 0.05);
+    --actionneutral-light-hover: rgba(0, 0, 0, 0.1);
+    --actionneutral-medium: rgba(0, 0, 0, 0.2);
+    --actionneutral-medium-hover: rgba(0, 0, 0, 0.25);
+    --actionneutral-heavy: rgba(0, 0, 0, 0.45);
+    --actionneutral-heavy-hover: rgba(0, 0, 0, 0.55);
+    --actiondanger-light: rgba(255, 0, 61, 0.15);
+    --actiondanger-light-hover: rgba(255, 0, 61, 0.3);
+    --actiondanger-medium: rgba(255, 0, 61, 0.3);
+    --actiondanger-medium-hover: rgba(255, 0, 61, 0.5);
+    --actiondanger-heavy: rgba(233, 3, 58, 1);
+    --actiondanger-heavy-hover: rgba(189, 9, 53, 1);
+}
+
+// @use "sass:string";
+
+$_COLORS_ALL: ('--black','--white','--primarybrown','--opacitydark-90','--opacitydark-80','--opacitydark-70','--opacitydark-60','--opacitydark-50','--opacitydark-40','--opacitydark-30','--opacitydark-20','--opacitydark-10','--opacitydark-5','--opacitylight-90','--opacitylight-80','--opacitylight-70','--opacitylight-60','--opacitylight-50','--opacitylight-40','--opacitylight-30','--opacitylight-20','--opacitylight-10','--opacitylight-5','--actioninfo-light','--actioninfo-light-hover','--actioninfo-medium','--actioninfo-medium-hover','--actioninfo-heavy','--actioninfo-heavy-hover','--actionpositive-light','--actionpositive-light-hover','--actionpositive-medium','--actionpositive-medium-hover','--actionpositive-heavy','--actionpositive-heavy-hover','--actionwarning-light','--actionwarning-light-hover','--actionwarning-medium','--actionwarning-medium-hover','--actionwarning-heavy','--actionwarning-heavy-hover','--actionneutral-light','--actionneutral-light-hover','--actionneutral-medium','--actionneutral-medium-hover','--actionneutral-heavy','--actionneutral-heavy-hover','--actiondanger-light','--actiondanger-light-hover','--actiondanger-medium','--actiondanger-medium-hover','--actiondanger-heavy','--actiondanger-heavy-hover');
+// css.filter(cl => !cl.endsWith('-hover')).map(cl => cl.substring(2))
+$_COLORS_STATIC: ('black', 'white', 'primarybrown', 'opacitydark-90', 'opacitydark-80', 'opacitydark-70', 'opacitydark-60', 'opacitydark-50', 'opacitydark-40', 'opacitydark-30', 'opacitydark-20', 'opacitydark-10', 'opacitydark-5', 'opacitylight-90', 'opacitylight-80', 'opacitylight-70', 'opacitylight-60', 'opacitylight-50', 'opacitylight-40', 'opacitylight-30', 'opacitylight-20', 'opacitylight-10', 'opacitylight-5', 'actioninfo-light', 'actioninfo-medium', 'actioninfo-heavy', 'actionpositive-light', 'actionpositive-medium', 'actionpositive-heavy', 'actionwarning-light', 'actionwarning-medium', 'actionwarning-heavy', 'actionneutral-light', 'actionneutral-medium', 'actionneutral-heavy', 'actiondanger-light', 'actiondanger-medium', 'actiondanger-heavy');
+// css.filter(cl => cl.endsWith('-hover')).map(cl => cl.substring(2,cl.length-6))
+$_COLORS_HOVER: ('actioninfo-light', 'actioninfo-medium', 'actioninfo-heavy', 'actionpositive-light', 'actionpositive-medium', 'actionpositive-heavy', 'actionwarning-light', 'actionwarning-medium', 'actionwarning-heavy', 'actionneutral-light', 'actionneutral-medium', 'actionneutral-heavy', 'actiondanger-light', 'actiondanger-medium', 'actiondanger-heavy');
+@each $name in $_COLORS_STATIC{
+    .color-#{$name}{
+        color: var(--#{$name});
+    }
+    .bg-#{$name}{
+        background-color: var(--#{$name});
+    }
+}
+@each $name in $_COLORS_HOVER{
+    .color-#{$name}:hover{
+        color: var(--#{$name}-hover);
+    }
+    .bg-#{$name}:hover{
+        background-color: var(--#{$name}-hover);
+    }
+}
+
+.filter-invert{
+    filter: invert(1);
+}

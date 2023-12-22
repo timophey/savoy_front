@@ -1,0 +1,45 @@
+$_CSSAR: (
+    ("xs",0,360,calc(328/320)), // ("xs",0,$_XS,3),
+    ("sm",$_SM,$_SM,calc(72/40)),
+    ("md",$_MD,$_MD,calc(46/40)),
+    ("lg",$_LG,$_LG,calc(68/50)),
+    ("xl",$_XL,$_XL,calc(912/600))
+    );
+.cs_slider{
+    --count:1;
+    --index:1;
+    --curr-progress:0;
+    &_picture{
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: 50% 20%;
+        }
+    }
+    &_navitem{
+        cursor: pointer;
+    }
+    .progress{
+        --part: calc(100 / var(--count));
+        --value: calc(var(--part) * (var(--index) + var(--curr-progress) * 0.01));
+        &:before{
+            transition: width .2s linear;
+        }
+    }
+    &.csslider &_navitem:not(.active){
+        color: var(--opacitydark-40);
+    }
+    @each $name, $min, $size, $ratio in $_CSSAR{
+        @media screen and (min-width: $min){
+            &_picture{
+                aspect-ratio: $ratio;
+            }
+        }
+    }
+    @media screen and (min-width: $_SM) {
+        &_navitem{
+            width: calc(100%/var(--count));
+        }
+    }
+}

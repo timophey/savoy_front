@@ -1,0 +1,22 @@
+$_AR: (
+    ("xs",0,360,calc(328/240)), // ("xs",0,$_XS,3),
+    ("sm",$_SM,$_SM,calc(348/240)),
+    ("md",$_MD,$_MD,calc(468/240)),
+    ("lg",$_LG,330px,calc(330/240)),
+    ("xl",$_XL,444px,calc(444/240))
+    );
+.main_cards{
+    // .main_article_picture{
+
+    // }
+    @each $name, $min, $size, $ratio in $_AR{
+        @media screen and (min-width: $min){
+            .swiper-slide{
+                width: $size;
+            }
+            .main_article_picture{
+                aspect-ratio: $ratio;
+            }
+        }
+    }
+}

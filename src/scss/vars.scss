@@ -1,0 +1,62 @@
+$_BLACK: #000;
+$_WHITE: #FFF;
+$_GREY: rgba(80, 80, 80, 0.6);
+$_RED: #F1362A;
+
+$_XS: 360px; // 360
+$_SM: 768px;
+$_MD: 1024px;
+$_LG: 1280px;
+$_XL: 1680px;
+$GAP: 32px;
+
+
+// 
+// min, container, columns
+
+$_BP: (
+    ("xs",0,none,3), // ("xs",0,$_XS,3),
+    ("sm",$_SM,$_SM,4),
+    ("md",$_MD,$_MD,4),
+    ("lg",$_LG,$_LG,7),
+    ("xl",$_XL,$_XL,7)
+    );
+
+$_FS: (
+    (10,16),
+    (12,20),
+    (15,24),
+    (20,24),
+    (32,40),
+    (40,48),
+    (64,64)
+);
+
+$_BR: (
+    (0, 0),
+    (6, 6px),
+    (12, 12px),
+    (16, 16px),
+    (round, 50%),
+);
+
+$_FW: (100,200,300,400,500,600,700,800,900,bold);
+
+$_FF: (
+    ('montserrat','Montserrat'),
+    ('playfair','Playfair Display'),
+);
+
+$_FST: (normal, italic, oblique);
+
+$_TT: (capitalize, uppercase, lowercase, none);
+
+
+$_FA: (center, left, right);
+
+$_DISPLAYS: (block,inline,inline-block,flex,inline-flex,none,table,unset);
+
+$_align_items: (center, flex-start, flex-end, stretch, baseline);
+$_justify_content: (center, flex-start, flex-end,space-between, space-around,space-evenly);
+$_direction: (row, column, row-reverse);
+$_wrap: (wrap, nowrap);

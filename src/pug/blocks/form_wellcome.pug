@@ -1,0 +1,24 @@
+.bg-black.color-white.br-12
+    form
+        .form_wellcome.p-4.d-flex.flex-column.g-4(data-theme="light")
+            .h2.text-center 
+                | Приглашаем в 
+                i Savoy Wellness
+            .form_wellcome_fields.d-flex.flex-column.g-1
+                .form-field
+                    select.form-select
+                        option(selected,disabled) Выбрать клуб
+                        option Чистые пруды
+                        option Новослободская
+                .form-field
+                    input.form-input(type="text",placeholder="Ваше имя")
+                .form-field
+                    input.form-input(type="text",placeholder="Телефон")
+            .form-field.text-center
+                button(type="submit").btn.btn-primary.button.button--calypso.text-center.justify-center
+                    span Отправить
+                p Нажимая на кнопку отправить вы соглашаетесь на обработку персональных данных
+            .form-field.text-center
+                .btn.btn-secondary.button.button--calypso.text-center.justify-center.d-inline-block
+                    i.icon-Whatsapp
+                    span Написать в whatsapp

@@ -1,0 +1,36 @@
+.layoutFooter{
+    nav{
+        border: 1px solid var(--opacitydark-20, rgba(0, 0, 0, 0.20));
+        a{
+            font: 600 24px/32px 'Playfair Display';
+            &:not(:last-child){
+                border-bottom: 1px solid var(--opacitydark-20, rgba(0, 0, 0, 0.20));
+            }
+        }
+    }
+    @media screen and (min-width: $_SM) {
+        &>.row:first-child{
+            position: relative;
+            &::before, &::after{
+                content: "";
+                display: block;
+                background-color: var(--opacitydark-20);
+                width: calc(50%); height: 1px;
+                left: calc(var(--gap) / 2);
+                top: 0;
+                position: absolute;
+            }
+            &::after{
+                top: auto; bottom: 0;
+            }
+        }
+    }
+    // &>.row{
+    //     align-items: stretch;
+    // }
+    // &>.row:first-child>*{
+    //     border-bottom: 1px solid var(--opacitydark-20, rgba(0, 0, 0, 0.20));
+    //     border-top: 1px solid var(--opacitydark-20, rgba(0, 0, 0, 0.20));
+    // }
+
+}

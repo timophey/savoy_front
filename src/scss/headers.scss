@@ -1,0 +1,41 @@
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    font-family: 'Playfair Display';
+    font-weight: 600;
+}
+$_HX: (
+    (1, 64px, 64px),
+    (2, 48px, 56px),
+    (3, 40px, 48px),
+    (4, 32px, 40px),
+    (5, 24px, 32px),
+    (6, 18px, 24px),
+);
+@each $t, $fs, $lh in $_HX{
+    .h#{$t}, h#{$t}{
+        font-size: $fs;
+        line-height: $lh;
+    }
+}
+
+.body, body{
+    font: 15px/160% 'Montserrat';
+}
+
+.caption12{
+    font-size: 12px;
+    line-height: calc((1em - 2px) * 2);
+}
+.caption10{
+    font-size: 10px;
+    line-height: 200%;
+}
+
+.button, .btn{
+    font-family: Montserrat;
+    font-size: calc(1em / 1.5);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 160% */
+    letter-spacing: 0.1px;
+    text-transform: uppercase;
+}

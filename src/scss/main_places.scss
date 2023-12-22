@@ -1,0 +1,27 @@
+.main_places{
+    // border-top: 1px solid var(--opacitydark-20);
+    // border-bottom: 1px solid var(--opacitydark-20);
+    &_picture{
+        // overflow: hidden;
+        aspect-ratio: 4/3;
+        img{
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    // &_content{
+        
+    // }
+    @media screen and (min-width: $_LG){
+        &_preview{
+            padding-right: 36px !important;
+            position: relative;
+            &:after{
+                // make border-right
+                content: ""; display: block; width: 1px; height: 100%;
+                position: absolute; top: 0; right: calc(var(--gap) / 2);
+                background-color: var(--opacitydark-20);
+            }
+        }
+    }
+}

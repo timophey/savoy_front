@@ -1,0 +1,201 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="css/main.css")
+        script(src="js/vendor.js") 
+        script(src="js/main.js") 
+        title Savoy UI Kit
+    body 
+        .container
+            .h2 All headers
+            .row 
+                .col-lg-3
+                    h1 Headline 1
+                    h2 Headline 2
+                    h3 Headline 3
+                    h4 Headline 4
+                    h5 Headline 5
+                    h6 Headline 6
+                .col-lg-3.fst-italic
+                    h1 Headline 1
+                    h2 Headline 2
+                    h3 Headline 3
+                    h4 Headline 4
+                    h5 Headline 5
+                    h6 Headline 6
+                .col-lg-1
+                    h1 64/64
+                    h2 48/56
+                    h3 40/48
+                    h4 32/40
+                    h5 24/32
+                    h6 18/24
+            .row
+                .col-lg-3
+                    p Body 15
+                    p.fw-medium Body 15
+                    p.caption12 Caption 12
+                    p.caption10 Caption 10
+                    p.button Button
+        .container
+            h2 Icons
+            // cd src/assets/icons  
+            // ls *.svg
+            // s.split(' ').filter(el => el.length).map(el => el.split('.').at(0))
+            - var icons = ['Arrow-bottom', 'Arrow-right', 'Arrow-top-right', 'Basket', 'Chevron-top', 'Marker', 'Play', 'VK', 'Arrow-left', 'Arrow-top-left', 'Arrow-top', 'Chevron-bottom', 'Close', 'Menu', 'Pluse', 'Whatsapp']
+            each item in icons
+                .icon_preview
+                    i(class=`icon-${item}`)
+                    span=`.icon-${item}`
+        .container
+            h2 Colors
+            - var colors = ['black', 'white', 'primarybrown', 'opacitydark-90', 'opacitydark-80', 'opacitydark-70', 'opacitydark-60', 'opacitydark-50', 'opacitydark-40', 'opacitydark-30', 'opacitydark-20', 'opacitydark-10', 'opacitydark-5', 'opacitylight-90', 'opacitylight-80', 'opacitylight-70', 'opacitylight-60', 'opacitylight-50', 'opacitylight-40', 'opacitylight-30', 'opacitylight-20', 'opacitylight-10', 'opacitylight-5', 'actioninfo-light', 'actioninfo-medium', 'actioninfo-heavy', 'actionpositive-light', 'actionpositive-medium', 'actionpositive-heavy', 'actionwarning-light', 'actionwarning-medium', 'actionwarning-heavy', 'actionneutral-light', 'actionneutral-medium', 'actionneutral-heavy', 'actiondanger-light', 'actiondanger-medium', 'actiondanger-heavy'];
+            .row
+                .col-lg-1
+                    each item in colors
+                        .icon_preview
+                            i(class=`bg-${item} icon-`)
+                            //- | &nbsp;
+                            //- span=`.bg-${item}`
+                .col-lg-2.bg-black.color-white
+                    each item in colors
+                        .icon_preview
+                            i(class=`bg-${item} icon-`)
+                            | &nbsp;
+                            span=`.bg-${item}`
+                .col-lg-2
+                    each item in colors
+                        .icon_preview
+                            i(class=`color-${item} icon- w-auto`)
+                                span=`.color-${item}`
+                .col-lg-2.bg-black
+                    each item in colors
+                        .icon_preview
+                            i(class=`color-${item} icon- w-auto`)
+                                | &nbsp;
+                                span=`.color-${item}`
+        // cat src/scss/colors.scss | awk '{print $1}' > colors.txt
+        .container
+            h2 buttons
+            - var themes = ['dark','light'];
+            - var types = ['primary','secondary'];
+            - var back = ['white', 'black']
+            - var text = ['black', 'white', ]
+            .row
+                each theme, i in themes
+                    div(class=`col-lg-3 bg-${back[i]} color-${text[i]}`)
+                        h3=`${theme}`
+                        each type, j in types
+                            h4=`${type}`
+                            div
+                                button(class=`btn btn-${type} btn-${theme} button button--calypso`)
+                                    i.icon-Arrow-top-right
+                                    span button
+                                button(class=`btn btn-${type} btn-${theme} button button--calypso`)
+                                    span button
+                                //- button(class=`btn btn-${type} btn-${theme} button button--calypso`)
+                                //-     span Пиздец длинная кнопка
+                                button(class=`btn btn-${type} btn-${theme} button button--calypso_`)
+                                    i.icon-Arrow-top-right
+                            br
+                            div
+                                button(disabled class=`btn btn-${type} btn-${theme} button button--calypso`)
+                                    i.icon-Arrow-top-right
+                                    span button
+                                button(disabled class=`btn btn-${type} btn-${theme} button button--calypso`)
+                                    span disabled
+                                button(disabled class=`btn btn-${type} btn-${theme} button`)
+                                    i.icon-Arrow-top-right
+                            br
+            h2 Links
+            .row
+                each theme, i in themes
+                    div(class=`col-lg-3 bg-${back[i]} color-${text[i]}`)
+                        h5=`${theme}`
+                        a(class=`link-accent link-${theme}`)="Link default"
+                        br
+                        a(class=`link-accent link-${theme} disabled`)="Link disabled"
+                        br
+                        br
+            h2 Controls
+            .row
+                each theme, i in themes
+                    div(class=`col-lg-3 bg-${back[i]} color-${text[i]}`)
+                        h5=`${theme}`
+                        p default
+                        a(class=`control control-${theme}`)
+                            i.icon-Arrow-left
+                        a(class=`control control-${theme}`)
+                            i.icon-Arrow-right
+                        p disabled
+                        a(class=`control control-${theme} disabled`)
+                            i.icon-Arrow-left
+                        a(class=`control control-${theme} disabled`)
+                            i.icon-Arrow-right
+                        br
+                        br
+            h2 Social
+            .row
+                each theme, i in themes
+                    div(class=`col-lg-3 bg-${back[i]} color-${text[i]}`)
+                        h5=`${theme}`
+                        p default
+                        a(class=`control control-social control-${theme}`)
+                            i.icon-VK
+                        p disabled
+                        a(class=`control control-social control-${theme} disabled`)
+                            i.icon-VK
+                        br
+                        br
+            
+                            //- button button
+                            //- button(disabled) button 
+                //- h3 But
+            h2 Progress
+            each size in [0,10,20,30,40,50,60,70,80,90,100]
+                .row
+                    .col-1.col-lg-1=`${size}%`
+                    .col-2.col-lg-6
+                        .progress(style=`--value:${size}`)
+            h2 Accordion
+            .accordion
+                each i in [0,1,2,3]
+                    .spoiler
+                        .spoiler-head
+                            .spoiler-title
+                                | Accordion title
+                            .spoiler-control.control-dark.control
+                                i.icon-Pluse
+                        .spoiler-body
+                            .row
+                                .col-sm-2
+                                    p Центр спорта и здоровья Savoy Wellness располагает всем необходимым для поддержания гармоничной физической формы. Вашему вниманию предлагается более 10 видов авторских групповых тренировок и возможность индивидуальных занятий с тренером. 
+                                .col-sm-2
+                                    p Кроме того, мы приглашаем вас в фитнес-зал премиального уровня с тренажёрами последнего поколения Precor и Hoist с возможностью персонализации, выходом в интернет и технологией Run TV.
+        .container
+            h2 Select
+            .row.pb-10
+                each theme, i in themes
+                    div(class=`col-3 col-sm-2 col-lg-3 bg-${back[i]} color-${text[i]}`,data-theme=theme)
+                        .w-100.py-4
+                            select.form-select
+                                option list item 1
+                                option list item 2
+                                option(selected) list value
+                                option list item 4 
+                                option list item 5
+        .container.mb-10.pb-10
+            h2 Input
+            .row.pb-10
+                each theme, i in themes
+                    div(class=`col-3 col-sm-2 col-lg-3 bg-${back[i]} color-${text[i]}`,data-theme=theme)
+                        form(action="") 
+                            .w-100.my-2
+                                input.form-input(placeholder="Text input", required)
+                            .w-100.my-2
+                                input.form-input(placeholder="Text input",value="input value")
+                            .w-100.my-2
+                                input.form-input(value="input value",disabled)
+                            input(type="submit")
