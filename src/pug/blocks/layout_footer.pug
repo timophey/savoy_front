@@ -4,22 +4,22 @@ footer(data-theme='dark')
             .row
                 .col-3.col-sm-2.col-lg-3.fs-15.py-2.d-flex.flex-column.g-3
                     .d-flex.flex-column.g-2
-                        h3.my-0 Quis autem vel eum iure reprehenderit
+                        h3.my-0.header_hidden_top Quis autem vel eum iure reprehenderit
                         p.my-0 Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma
                     .d-block
                         a.btn.btn-secondary.button.button--calypso
                             span Клубные карты
                 .col-3.col-sm-2.col-lg-4
                     nav.d-flex.flex-column
-                        a(href="#",data-theme='light_').p-2
+                        a(href="#",data-theme="dark").p-2.filter-hover-invert.nodecor
                             span Расписание занятий
-                        a(href="#").p-2
+                        a(href="#",data-theme="dark").p-2.filter-hover-invert.nodecor
                             span Правила клуба
-                        a(href="#").p-2
+                        a(href="#",data-theme="dark").p-2.filter-hover-invert.nodecor
                             span Блог
-                        a(href="#").p-2
+                        a(href="#",data-theme="dark").p-2.filter-hover-invert.nodecor
                             span О компании
-                        a(href="#").p-2
+                        a(href="#",data-theme="dark").p-2.filter-hover-invert.nodecor
                             span Контакты
             .d-flex.flex-column.flex-lg-nowrap.g-3.flex-md-row-reverse.fs-12.justify-space-between.pb-1
                 .col-3.col-sm-4.col-md-auto
@@ -37,3 +37,4 @@ footer(data-theme='dark')
                         span.text-nowrap.d-inline-block Центр спорта и здоровья
 include popup_mobile_nav
 include popup_contact
+include popup_club

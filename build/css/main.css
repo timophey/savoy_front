@@ -522,6 +522,14 @@ body {
   background-color: var(--actiondanger-heavy);
 }
 
+.color-transparent {
+  color: var(--transparent);
+}
+
+.bg-transparent {
+  background-color: var(--transparent);
+}
+
 .color-actioninfo-light:hover {
   color: var(--actioninfo-light-hover);
 }
@@ -642,9 +650,14 @@ body {
   background-color: var(--actiondanger-heavy-hover);
 }
 
-.filter-invert {
+.filter-invert,
+.filter-hover-invert:hover {
   -webkit-filter: invert(1);
           filter: invert(1);
+}
+
+.filter-hover-invert {
+  transition: 0.3s ease;
 }
 
 .fst-italic {
@@ -1040,6 +1053,14 @@ body {
   padding-bottom: 4px;
 }
 
+.pl-half {
+  padding-left: 4px;
+}
+
+.pr-half {
+  padding-right: 4px;
+}
+
 .px-half {
   padding-left: 4px;
   padding-right: 4px;
@@ -1090,6 +1111,14 @@ body {
 
 .pb-1 {
   padding-bottom: 8px;
+}
+
+.pl-1 {
+  padding-left: 8px;
+}
+
+.pr-1 {
+  padding-right: 8px;
 }
 
 .px-1 {
@@ -1144,6 +1173,14 @@ body {
   padding-bottom: 16px;
 }
 
+.pl-2 {
+  padding-left: 16px;
+}
+
+.pr-2 {
+  padding-right: 16px;
+}
+
 .px-2 {
   padding-left: 16px;
   padding-right: 16px;
@@ -1194,6 +1231,14 @@ body {
 
 .pb-3 {
   padding-bottom: 24px;
+}
+
+.pl-3 {
+  padding-left: 24px;
+}
+
+.pr-3 {
+  padding-right: 24px;
 }
 
 .px-3 {
@@ -1248,6 +1293,14 @@ body {
   padding-bottom: 32px;
 }
 
+.pl-4 {
+  padding-left: 32px;
+}
+
+.pr-4 {
+  padding-right: 32px;
+}
+
 .px-4 {
   padding-left: 32px;
   padding-right: 32px;
@@ -1298,6 +1351,14 @@ body {
 
 .pb-5 {
   padding-bottom: 40px;
+}
+
+.pl-5 {
+  padding-left: 40px;
+}
+
+.pr-5 {
+  padding-right: 40px;
 }
 
 .px-5 {
@@ -1352,6 +1413,14 @@ body {
   padding-bottom: 48px;
 }
 
+.pl-6 {
+  padding-left: 48px;
+}
+
+.pr-6 {
+  padding-right: 48px;
+}
+
 .px-6 {
   padding-left: 48px;
   padding-right: 48px;
@@ -1402,6 +1471,14 @@ body {
 
 .pb-8 {
   padding-bottom: 64px;
+}
+
+.pl-8 {
+  padding-left: 64px;
+}
+
+.pr-8 {
+  padding-right: 64px;
 }
 
 .px-8 {
@@ -1456,6 +1533,14 @@ body {
   padding-bottom: 80px;
 }
 
+.pl-10 {
+  padding-left: 80px;
+}
+
+.pr-10 {
+  padding-right: 80px;
+}
+
 .px-10 {
   padding-left: 80px;
   padding-right: 80px;
@@ -1506,6 +1591,14 @@ body {
 
 .pb-auto {
   padding-bottom: auto;
+}
+
+.pl-auto {
+  padding-left: auto;
+}
+
+.pr-auto {
+  padding-right: auto;
 }
 
 .px-auto {
@@ -1560,6 +1653,14 @@ body {
   padding-bottom: 0;
 }
 
+.pl-0 {
+  padding-left: 0;
+}
+
+.pr-0 {
+  padding-right: 0;
+}
+
 .px-0 {
   padding-left: 0;
   padding-right: 0;
@@ -1604,6 +1705,15 @@ body {
 
 .lh-24 {
   line-height: 24px;
+}
+
+.fs-24 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.lh-32 {
+  line-height: 32px;
 }
 
 .fs-32 {
@@ -2080,6 +2190,10 @@ body {
   color: var(--opacitylight-20);
 }
 
+.btn.transparent {
+  background-color: transparent;
+}
+
 .button--calypso:hover:not(:active) {
   transition: background-color 0.4s cubic-bezier(0.1, 0, 0.3, 1) 0.4s;
 }
@@ -2178,7 +2292,7 @@ a {
   color: inherit;
 }
 
-a:hover:not(.btn) {
+a:hover:not(.btn):not(.link-accent):not(.nodecor) {
   text-decoration: underline;
 }
 
@@ -2412,6 +2526,7 @@ a:hover:not(.btn) {
 
 body {
   margin: 0;
+  transition: 0.3s;
 }
 
 body[data-popup-opened] {
@@ -2427,6 +2542,15 @@ body[data-popup-opened] {
 
 img {
   max-width: 100%;
+}
+
+img.hover-scale-105 {
+  transition: 0.5s ease;
+}
+
+img.hover-scale-105:hover,
+*:hover > img.hover-scale-105 {
+  transform: scale(1.05);
 }
 
 p:last-child {
@@ -2488,6 +2612,10 @@ p:first-child {
   background-image: var(--logo);
   width: 98px;
   height: 40px;
+}
+
+.layoutHeader_club {
+  min-width: 256px;
 }
 
 .layoutFooter nav {
@@ -2553,7 +2681,7 @@ p:first-child {
 .csselect-value {
   background-color: var(--bg);
   border-radius: 12px;
-  padding: 8px 16px;
+  padding: 8px 8px 8px 16px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
@@ -2665,6 +2793,7 @@ p:first-child {
   font: 500 10px/16px "Montserrat";
   letter-spacing: 0.1px;
   padding: 12px 16px;
+  width: 100%;
 }
 
 .csinput input {
@@ -2755,12 +2884,59 @@ input:focus + .csinput-label {
   --bc: var(--opacitylight-10);
 }
 
+.header_hidden_top span {
+  display: inline-block;
+  white-space: nowrap;
+  transition: 0.3s ease 0.5s;
+}
+
+.header_hidden_top span.cshh {
+  overflow: hidden;
+}
+
+.header_hidden_top span.cshh-hidden span {
+  transform: translateY(100%);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown_body {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  overflow: hidden;
+  height: auto;
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.dropdown:not(:hover) .dropdown_body {
+  height: 0;
+  opacity: 0;
+}
+
 .main_faq {
   transition: 0.3s;
 }
 
 .main_faq .article_picture {
   aspect-ratio: 2.4;
+}
+
+.main_faq.leaveHalf {
+  background-color: transparent !important;
+}
+
+.main_faq.leaveHalf .button--calypso span {
+  mix-blend-mode: normal;
+  color: #000;
+}
+
+.main_faq .spoiler-title {
+  font-weight: 600;
+  white-space: normal;
 }
 
 body:not([data-popup-opened]) .hasHero header[data-theme=light] {
@@ -2804,7 +2980,8 @@ body:not([data-popup-opened]) .hasHero header[data-theme=light] .btn i {
   z-index: 1;
 }
 
-.hero_banner img {
+.hero_banner img,
+.hero_banner video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -2870,6 +3047,15 @@ body:not([data-popup-opened]) .hasHero header[data-theme=light] .btn i {
 
 .main_map_front {
   min-height: 400px;
+}
+
+.main_map_ymap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--opacitylight-20);
 }
 
 .main_map .form-field .csinput {
@@ -3429,6 +3615,11 @@ body:not([data-popup-opened]) .hasHero header[data-theme=light] .btn i {
   .fs-xs-20 {
     font-size: 20px;
     line-height: 24px;
+  }
+
+  .fs-xs-24 {
+    font-size: 24px;
+    line-height: 32px;
   }
 
   .fs-xs-32 {
@@ -4104,6 +4295,11 @@ body:not([data-popup-opened]) .hasHero header[data-theme=light] .btn i {
   .fs-sm-20 {
     font-size: 20px;
     line-height: 24px;
+  }
+
+  .fs-sm-24 {
+    font-size: 24px;
+    line-height: 32px;
   }
 
   .fs-sm-32 {
@@ -4806,6 +5002,11 @@ body:not([data-popup-opened]) .hasHero header[data-theme=light] .btn i {
     line-height: 24px;
   }
 
+  .fs-md-24 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
   .fs-md-32 {
     font-size: 32px;
     line-height: 40px;
@@ -5491,6 +5692,11 @@ body:not([data-popup-opened]) .hasHero header[data-theme=light] .btn i {
   .fs-lg-20 {
     font-size: 20px;
     line-height: 24px;
+  }
+
+  .fs-lg-24 {
+    font-size: 24px;
+    line-height: 32px;
   }
 
   .fs-lg-32 {
@@ -6194,6 +6400,11 @@ body:not([data-popup-opened]) .hasHero header[data-theme=light] .btn i {
   .fs-xl-20 {
     font-size: 20px;
     line-height: 24px;
+  }
+
+  .fs-xl-24 {
+    font-size: 24px;
+    line-height: 32px;
   }
 
   .fs-xl-32 {

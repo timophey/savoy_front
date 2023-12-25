@@ -6,9 +6,18 @@ header(data-theme='light')
                 .d-none.d-sm-flex.g-2.align_items-center
                     .layoutHeader_phone
                         | +7 (495) 775 35 35
-                    a.button.btn.btn-secondary.button--calypso
-                        i.icon-Pluse
-                        span Выбрать клуб
+                    .dropdown
+                        a.button.btn.btn-secondary.button--calypso.dropdown_trigger
+                            i.icon-Pluse
+                            span Выбрать клуб
+                        .dropdown_body.pt-half
+                            .bg-black.color-white.br-12.fs-10.text-nowrap.text-uppercase
+                                a(href="#").d-flex.align-items-center.g-half.p-1.pl-2.justify-space-between.bg-black.filter-hover-invert.layoutHeader_club
+                                    span Чистые пруды
+                                    i.bg-opacitydark-10.icon-Arrow-top-right.filter-invert.br-6
+                                a(href="#").d-flex.align-items-center.g-half.p-1.pl-2.justify-space-between.bg-black.filter-hover-invert.layoutHeader_club
+                                    span Новослободская
+                                    i.bg-opacitydark-10.icon-Arrow-top-right.filter-invert.br-6
             .d-none.d-lg-flex.g-3
                 a.link.link-accent Расписание
                 a.link.link-accent Клубные карты

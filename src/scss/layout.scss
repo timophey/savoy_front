@@ -4,6 +4,7 @@ body{
         height: 100vh;
         overflow: hidden;
     }
+    transition: .3s;
 }
 
 *,
@@ -14,6 +15,12 @@ body{
 
 img{
     max-width: 100%;
+    &.hover-scale-105{
+        transition: .5s ease;
+        &:hover, *:hover>&{
+            transform: scale(1.05);
+        }
+    }
 }
 
 p:last-child{

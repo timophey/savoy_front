@@ -36,7 +36,7 @@ function CSSelect(node){
         rList.append(rItem);
         return rItem;
     });
-    console.log(rOpts)
+    // console.log(rOpts)
 
     let valueFromOriginal = function(){
         let i = node.options.selectedIndex;
@@ -47,14 +47,14 @@ function CSSelect(node){
     }
 
     let actionExpand = function(){
-        console.log('actionExpand')
+        // console.log('actionExpand')
         let bh = rList.scrollHeight;
 
         let rt = rRoot.getBoundingClientRect();
         let wh = window.outerHeight;
         let bt = wh - rt.bottom - rt.height * 2;
         
-        console.log(bh, bt, bh > bt)
+        // console.log(bh, bt, bh > bt)
         rRoot.classList.add('active');
         node.focus();
         rList.dataset.dno = (bh > bt) ? 1:0;
@@ -62,13 +62,13 @@ function CSSelect(node){
     }
 
     let actionCollapse = function(){
-        console.log('actionCollapse')
+        // console.log('actionCollapse')
         rRoot.classList.remove('active');
         rList.style.setProperty('height',null);
     }
 
     let actionToggle = function(){
-        console.log('actionToggle')
+        // console.log('actionToggle')
         return rRoot.classList.contains('active') ? actionCollapse() : actionExpand();
     }
 

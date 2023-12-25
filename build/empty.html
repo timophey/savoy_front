@@ -14,7 +14,12 @@
           <div class="layoutHeader">
             <div class="d-flex g-3"><a class="layoutHeader_logo" href="/"></a>
               <div class="d-none d-sm-flex g-2 align_items-center">
-                <div class="layoutHeader_phone">+7 (495) 775 35 35</div><a class="button btn btn-secondary button--calypso"><i class="icon-Pluse"></i><span>Выбрать клуб</span></a>
+                <div class="layoutHeader_phone">+7 (495) 775 35 35</div>
+                <div class="dropdown"><a class="button btn btn-secondary button--calypso dropdown_trigger"><i class="icon-Pluse"></i><span>Выбрать клуб</span></a>
+                  <div class="dropdown_body pt-half">
+                    <div class="bg-black color-white br-12 fs-10 text-nowrap text-uppercase"><a class="d-flex align-items-center g-half p-1 pl-2 justify-space-between bg-black filter-hover-invert layoutHeader_club" href="#"><span>Чистые пруды</span><i class="bg-opacitydark-10 icon-Arrow-top-right filter-invert br-6"></i></a><a class="d-flex align-items-center g-half p-1 pl-2 justify-space-between bg-black filter-hover-invert layoutHeader_club" href="#"><span>Новослободская</span><i class="bg-opacitydark-10 icon-Arrow-top-right filter-invert br-6"></i></a></div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="d-none d-lg-flex g-3"><a class="link link-accent">Расписание</a><a class="link link-accent">Клубные карты</a><a class="link link-accent">Личный кабинет</a><a class="link link-accent">Контакты</a></div>
@@ -30,13 +35,13 @@
             <div class="row">
               <div class="col-3 col-sm-2 col-lg-3 fs-15 py-2 d-flex flex-column g-3">
                 <div class="d-flex flex-column g-2">
-                  <h3 class="my-0">Quis autem vel eum iure reprehenderit</h3>
+                  <h3 class="my-0 header_hidden_top">Quis autem vel eum iure reprehenderit</h3>
                   <p class="my-0">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p>
                 </div>
                 <div class="d-block"><a class="btn btn-secondary button button--calypso"><span>Клубные карты</span></a></div>
               </div>
               <div class="col-3 col-sm-2 col-lg-4">
-                <nav class="d-flex flex-column"><a class="p-2" href="#" data-theme="light_"><span>Расписание занятий</span></a><a class="p-2" href="#"><span>Правила клуба</span></a><a class="p-2" href="#"><span>Блог</span></a><a class="p-2" href="#"><span>О компании</span></a><a class="p-2" href="#"><span>Контакты</span></a></nav>
+                <nav class="d-flex flex-column"><a class="p-2 filter-hover-invert nodecor" href="#" data-theme="dark"><span>Расписание занятий</span></a><a class="p-2 filter-hover-invert nodecor" href="#" data-theme="dark"><span>Правила клуба</span></a><a class="p-2 filter-hover-invert nodecor" href="#" data-theme="dark"><span>Блог</span></a><a class="p-2 filter-hover-invert nodecor" href="#" data-theme="dark"><span>О компании</span></a><a class="p-2 filter-hover-invert nodecor" href="#" data-theme="dark"><span>Контакты</span></a></nav>
               </div>
             </div>
             <div class="d-flex flex-column flex-lg-nowrap g-3 flex-md-row-reverse fs-12 justify-space-between pb-1">
@@ -68,7 +73,7 @@
                 <div class="fs-12">Свяжитесь с нами</div>
                 <div class="fs-32 fw-600 ff-playfair fs-sm-40">+7 (495) 775 35 35</div>
               </div>
-              <div class="d-flex justify-space-between py-half d-sm-none"><a class="button btn btn-secondary button--calypso"><i class="icon-Pluse"></i><span>Выбрать клуб</span></a>
+              <div class="d-flex justify-space-between py-half d-sm-none"><a class="button btn btn-secondary button--calypso" data-popup="club"><i class="icon-Pluse"></i><span>Выбрать клуб</span></a>
                 <div class="d-flex g-1"><a class="control control-social" href="//vk.com"><i class="icon-VK"></i></a><a class="control control-social" href="//vk.com"><i class="icon-Whatsapp"></i></a></div>
               </div>
             </footer>
@@ -85,8 +90,8 @@
                    Приглашаем в <i>Savoy Wellness</i></div>
                 <div class="form_wellcome_fields d-flex flex-column g-1">
                   <div class="form-field">
-                    <select class="form-select">
-                      <option selected disabled>Выбрать клуб</option>
+                    <select class="form-select" required>
+                      <option selected disabled value="">Выбрать клуб</option>
                       <option>Чистые пруды</option>
                       <option>Новослободская</option>
                     </select>
@@ -107,6 +112,14 @@
                 </div>
               </div>
             </form>
+          </div>
+        </div>
+      </div>
+      <div class="popup" data-name="club" data-opened="0">
+        <div class="d-flex flex-column align_items-center justify-center h-100 bg-opacitylight-80 p-6">
+          <div class="container popup-close text-right" data-popup="club"><i class="icon-Close bg-opacitydark-10 br-6"></i></div>
+          <div class="container">
+            <div class="bg-black color-white br-12 fs-10 text-nowrap text-uppercase"><a class="d-flex align-items-center g-half p-1 pl-2 justify-space-between layoutHeader_club" href="#"><span>Чистые пруды</span><i class="icon-Arrow-top-right bg-opacitydark-10 filter-invert br-6"></i></a><a class="d-flex align-items-center g-half p-1 pl-2 justify-space-between layoutHeader_club" href="#"><span>Новослободская</span><i class="icon-Arrow-top-right bg-opacitydark-10 filter-invert br-6"></i></a></div>
           </div>
         </div>
       </div>

@@ -47,6 +47,12 @@ $_spaces: (
     .pb-#{$x}{
         padding-bottom: $n;
     }
+    .pl-#{$x}{
+        padding-left: $n;
+    }
+    .pr-#{$x}{
+        padding-right: $n;
+    }
     .px-#{$x}{
         padding-left: $n;
         padding-right: $n;

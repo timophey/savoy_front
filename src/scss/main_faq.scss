@@ -3,4 +3,15 @@
     .article_picture{
         aspect-ratio: 2.4;
     }
+    &.leaveHalf{
+        background-color: transparent !important;
+        .button--calypso span{
+            mix-blend-mode: normal;
+            color: #000;
+        }
+    }
+    .spoiler-title{
+        font-weight: 600;
+        white-space: normal;
+    }
 }

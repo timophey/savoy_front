@@ -15,7 +15,12 @@
           <div class="layoutHeader">
             <div class="d-flex g-3"><a class="layoutHeader_logo" href="/"></a>
               <div class="d-none d-sm-flex g-2 align_items-center">
-                <div class="layoutHeader_phone">+7 (495) 775 35 35</div><a class="button btn btn-secondary button--calypso"><i class="icon-Pluse"></i><span>Выбрать клуб</span></a>
+                <div class="layoutHeader_phone">+7 (495) 775 35 35</div>
+                <div class="dropdown"><a class="button btn btn-secondary button--calypso dropdown_trigger"><i class="icon-Pluse"></i><span>Выбрать клуб</span></a>
+                  <div class="dropdown_body pt-half">
+                    <div class="bg-black color-white br-12 fs-10 text-nowrap text-uppercase"><a class="d-flex align-items-center g-half p-1 pl-2 justify-space-between bg-black filter-hover-invert layoutHeader_club" href="#"><span>Чистые пруды</span><i class="bg-opacitydark-10 icon-Arrow-top-right filter-invert br-6"></i></a><a class="d-flex align-items-center g-half p-1 pl-2 justify-space-between bg-black filter-hover-invert layoutHeader_club" href="#"><span>Новослободская</span><i class="bg-opacitydark-10 icon-Arrow-top-right filter-invert br-6"></i></a></div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="d-none d-lg-flex g-3"><a class="link link-accent">Расписание</a><a class="link link-accent">Клубные карты</a><a class="link link-accent">Личный кабинет</a><a class="link link-accent">Контакты</a></div>
@@ -26,10 +31,12 @@
         </div>
       </header>
       <div class="hero hero_underground" data-theme="light">
-        <div class="hero_banner"><img src="images/hero.jpeg" alt=""></div>
+        <div class="hero_banner">
+          <video src="https://html.contserv.tmweb.ru/savoy_static/video_3.mp4" autoplay loop muted> </video>
+        </div>
         <div class="hero_content h-100 d-flex flex-column justify-content-end py-6 px-2_">
           <div class="container d-flex flex-column g-3">
-            <div class="ff-playfair fs-40 fs-sm-64"> 
+            <div class="ff-playfair fw-600 fs-40 fs-sm-64">
               <div>Фитнес-клубы </div>
               <div class="fst-italic">Savoy Wellness</div>
             </div>
@@ -38,13 +45,13 @@
         </div>
       </div>
       <div class="container">
-        <div class="main_places row flex-column flex-sm-row cg-3 pb-10 mt-4 border-top border-bottom pb-lg-0" data-theme="dark">
+        <div class="main_places row flex-column flex-sm-row align_items-sm-stretch cg-3 pb-10 mt-4 border-top border-bottom pb-lg-0" data-theme="dark">
           <div class="main_places_preview mb-1 col-3 col-lg-3 mb-lg-0">
-            <h1 class="fs-32">Quis autem vel eum iure reprehenderit</h1>
+            <h1 class="fs-32 header_hidden_top">Quis autem vel eum iure reprehenderit</h1>
             <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p>
           </div>
           <div class="main_places_card d-flex flex-column g-2 col-3 col-sm-2 col-lg-2 pb-lg-10 pt-lg-3">
-            <div class="main_places_picture br-12"><img src="images/place1.png" alt=""></div>
+            <div class="main_places_picture br-12"><img class="hover-scale-105" src="images/place1.png" alt=""></div>
             <div class="d-flex flex-column g-3">
               <div class="main_places_content">
                 <div class="h5">Чистые пруды</div>
@@ -55,11 +62,11 @@
                   </div>
                 </div>
               </div>
-              <div class="main_places_actions d-flex g-1"><a class="button btn btn-primary button--calypso"><span>Выбрать клуб</span></a><a class="button btn btn-secondary button--calypso"><span>Показать В 2Gis</span></a></div>
+              <div class="main_places_actions d-flex g-1"><a class="button btn btn-primary button--calypso"><span>Выбрать клуб</span></a><a class="button btn btn-secondary button--calypso" target="_blank" href="https://2gis.ru/moscow/branches/70000001038779393/firm/70000001038779394?m=37.638495%2C55.7666%2F18.74"><span>Показать В 2Gis</span></a></div>
             </div>
           </div>
           <div class="main_places_card d-flex flex-column g-2 col-3 col-sm-2 col-lg-2 pb-lg-10 pt-lg-3">
-            <div class="main_places_picture br-12"><img src="images/place2.png" alt=""></div>
+            <div class="main_places_picture br-12"><img class="hover-scale-105" src="images/place2.png" alt=""></div>
             <div class="d-flex flex-column g-3">
               <div class="main_places_content">
                 <div class="h5">Новослободская</div>
@@ -70,20 +77,20 @@
                   </div>
                 </div>
               </div>
-              <div class="main_places_actions d-flex g-1"><a class="button btn btn-primary button--calypso"><span>Выбрать клуб</span></a><a class="button btn btn-secondary button--calypso"><span>Показать В 2Gis</span></a></div>
+              <div class="main_places_actions d-flex g-1"><a class="button btn btn-primary button--calypso"><span>Выбрать клуб</span></a><a class="button btn btn-secondary button--calypso" target="_blank" href="https://2gis.ru/moscow/branches/70000001038779393/firm/70000001040592434/37.601317%2C55.775626?m=37.601567%2C55.775573%2F19.09"><span>Показать В 2Gis</span></a></div>
             </div>
           </div>
         </div>
       </div>
       <div class="main_article pb-10">
         <div class="container">
-          <div class="main_article_picture br-12 mt-4"><img src="images/article.png" alt="alt"></div>
+          <div class="main_article_picture br-12 mt-4"><img class="image-transform" src="images/article.png" alt="alt"></div>
           <div class="d-flex mt-4 align_items-center"><i class="icon-Point"></i>
             <div class="text-uppercase fs-10 fw-500">Велнес-философия Savoy</div>
           </div>
           <div class="main_article_body row flex-column flex-lg-row">
             <div class="col-3 col-lg-4">
-              <h2 class="h4 fs-sm-40 mt-3 mb-0">Центр спорта и здоровья <i>Savoy Wellness </i>приглашает вас полноценно позаботиться о своей душевной и телесной гармонии</h2>
+              <h2 class="h4 fs-sm-40 mt-3 mb-0 header_hidden_top">Центр спорта и здоровья <i>Savoy Wellness </i>приглашает вас полноценно позаботиться о своей душевной и телесной гармонии</h2>
             </div>
             <div class="col-3 col-lg-3">
               <p>Европейское оборудование класса люкс, авторские программы тренировок, большой выбор уходовых процедур — всё это воплощение велнес-философии наших клубов, в основе которой лежит бережное внимание к потребностям каждого гостя.</p>
@@ -141,7 +148,7 @@
               </div>
               <div class="col-3 col-sm-4 col-md-2 col-lg-3">
                 <div class="cs_slider_content bg-white">
-                  <div class="cs_slider_title fw-600 fs-32 fs-sm-40 ff-playfair">Фитнес</div>
+                  <div class="cs_slider_title fw-600 fs-32 fs-sm-40 ff-playfair header_hidden_top">Фитнес</div>
                   <p>Центр спорта и здоровья Savoy Wellness располагает всем необходимым для поддержания гармоничной физической формы. Вашему вниманию предлагается более 10 видов авторских групповых тренировок и возможность индивидуальных занятий с тренером. </p>
                   <p>Кроме того, мы приглашаем вас в фитнес-зал премиального уровня с тренажёрами последнего поколения Precor и Hoist с возможностью персонализации, выходом в интернет и технологией Run TV.</p>
                 </div>
@@ -153,7 +160,7 @@
               </div>
               <div class="col-3 col-sm-4 col-md-2 col-lg-3">
                 <div class="cs_slider_content bg-white">
-                  <div class="cs_slider_title fw-600 fs-32 fs-sm-40 ff-playfair">Диагностика</div>
+                  <div class="cs_slider_title fw-600 fs-32 fs-sm-40 ff-playfair header_hidden_top">Диагностика</div>
                   <p>Велнес-философия клубов Savoy начинается с бережного внимания к вашему здоровью. Поэтому мы предлагаем вам перед занятиями пройти фитнес-диагностику вашего метаболизма, мышечной силы и опорно-двигательного аппарата с помощью европейского оборудования класса люкс. </p>
                   <p>Опираясь на её результаты, ваш персональный тренер сможет составить для вас программу тренировок, соответствующую вашим потребностям, а также предоставить вам рекомендации по питанию.</p>
                 </div>
@@ -165,7 +172,7 @@
               </div>
               <div class="col-3 col-sm-4 col-md-2 col-lg-3">
                 <div class="cs_slider_content bg-white">
-                  <div class="cs_slider_title fw-600 fs-32 fs-sm-40 ff-playfair">Релакс</div>
+                  <div class="cs_slider_title fw-600 fs-32 fs-sm-40 ff-playfair header_hidden_top">Релакс</div>
                   <p>Велнес — это сочетание душевной и телесной гармонии. Центр спорта и здоровья Savoy Wellness заботится о том, чтобы вы могли глубоко полноценного отдохнуть и восстановить силы после тяжелого дня. </p>
                   <p>Джакузи и банный комплекс с финской сауной, хамамом и русскими парениями позволит вам расслабиться, освободиться от дискомфорта и боли в мышцах и ощутить душевное спокойствие, а соляная комната поможет поддержать иммунитет и избавиться от стрессовых переживаний.</p>
                 </div>
@@ -177,7 +184,7 @@
               </div>
               <div class="col-3 col-sm-4 col-md-2 col-lg-3">
                 <div class="cs_slider_content bg-white">
-                  <div class="cs_slider_title fw-600 fs-32 fs-sm-40 ff-playfair">Красота</div>
+                  <div class="cs_slider_title fw-600 fs-32 fs-sm-40 ff-playfair header_hidden_top">Красота</div>
                   <p>Специалисты Центра спорта и здоровья Savoy Wellness будут рады позаботиться о вашей красоте и продлить молодость вашей кожи. На ваш выбор предлагается широкий ассортимент классических и инновационных косметических процедур.</p>
                   <p>Массажи по методике разных стран, гидромассаж, пилинги и обёртывания, классические и авторские маски и множество видов ухода — совместно с мастером вы сможете выбрать процедуру, которая идеально подойдёт под ваши пожелания.</p>
                 </div>
@@ -189,7 +196,7 @@
               </div>
               <div class="col-3 col-sm-4 col-md-2 col-lg-3">
                 <div class="cs_slider_content bg-white">
-                  <div class="cs_slider_title fw-600 fs-32 fs-sm-40 ff-playfair">Гармония</div>
+                  <div class="cs_slider_title fw-600 fs-32 fs-sm-40 ff-playfair header_hidden_top">Гармония</div>
                   <p>Центр спорта и здоровья Savoy Wellness станет для вас зоной тишины, релаксации и спокойствия в центре Москвы. Здесь вы можете отдохнуть от шума и суеты мегаполиса и обрести контакт с собой и своими желаниями. </p>
                   <p>Вне зависимости от того, какой способ расслабляться предпочитаете вы — активный отдых в спортзале, плавание, йогу и медитацию или гидропроцедуры — мы позаботимся, чтобы вы были окружены заботой, вниманием и премиальным уровнем сервиса.</p>
                 </div>
@@ -218,7 +225,7 @@
               </div>
               <div class="col-3 col-md-3 col-lg-4">
                 <div class="row justify-space-between">
-                  <h2 class="col-3 col-md-3 h4 fs-sm-40 mt-0 mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut al</h2>
+                  <h2 class="col-3 col-md-3 h4 fs-sm-40 mt-0 mb-0 header_hidden_top">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut al</h2>
                   <div class="d-none d-md-flex g-1 col-md" data-theme="dark">
                     <div class="control swiper-btn-prev"><i class="icon-Arrow-left"></i></div>
                     <div class="control swiper-btn-next"><i class="icon-Arrow-right"></i></div>
@@ -230,100 +237,93 @@
           <div class="main_cards_slider mb-10">
             <div class="swiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="main_article_picture br-12 mt-4"><img src="images/card.png" alt="alt">
-                    <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                <div class="swiper-slide"><a href="#">
+                    <div class="main_article_picture br-12 mt-4"><img class="hover-scale-105" src="images/card.png" alt="alt">
+                      <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="h3 fs-sm-32">Neque porro quisquam </div>
-                  <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="main_article_picture br-12 mt-4"><img src="images/card.png" alt="alt">
-                    <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                    <div class="h3 fs-24 fs-sm-32">Neque porro quisquam </div>
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p></a></div>
+                <div class="swiper-slide"><a href="#">
+                    <div class="main_article_picture br-12 mt-4"><img class="hover-scale-105" src="images/card.png" alt="alt">
+                      <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="h3 fs-sm-32">Neque porro quisquam </div>
-                  <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="main_article_picture br-12 mt-4"><img src="images/card.png" alt="alt">
-                    <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                    <div class="h3 fs-24 fs-sm-32">Neque porro quisquam </div>
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p></a></div>
+                <div class="swiper-slide"><a href="#">
+                    <div class="main_article_picture br-12 mt-4"><img class="hover-scale-105" src="images/card.png" alt="alt">
+                      <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="h3 fs-sm-32">Neque porro quisquam </div>
-                  <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="main_article_picture br-12 mt-4"><img src="images/card.png" alt="alt">
-                    <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                    <div class="h3 fs-24 fs-sm-32">Neque porro quisquam </div>
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p></a></div>
+                <div class="swiper-slide"><a href="#">
+                    <div class="main_article_picture br-12 mt-4"><img class="hover-scale-105" src="images/card.png" alt="alt">
+                      <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="h3 fs-sm-32">Neque porro quisquam </div>
-                  <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="main_article_picture br-12 mt-4"><img src="images/card.png" alt="alt">
-                    <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                    <div class="h3 fs-24 fs-sm-32">Neque porro quisquam </div>
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p></a></div>
+                <div class="swiper-slide"><a href="#">
+                    <div class="main_article_picture br-12 mt-4"><img class="hover-scale-105" src="images/card.png" alt="alt">
+                      <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="h3 fs-sm-32">Neque porro quisquam </div>
-                  <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="main_article_picture br-12 mt-4"><img src="images/card.png" alt="alt">
-                    <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                    <div class="h3 fs-24 fs-sm-32">Neque porro quisquam </div>
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p></a></div>
+                <div class="swiper-slide"><a href="#">
+                    <div class="main_article_picture br-12 mt-4"><img class="hover-scale-105" src="images/card.png" alt="alt">
+                      <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="h3 fs-sm-32">Neque porro quisquam </div>
-                  <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="main_article_picture br-12 mt-4"><img src="images/card.png" alt="alt">
-                    <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                    <div class="h3 fs-24 fs-sm-32">Neque porro quisquam </div>
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p></a></div>
+                <div class="swiper-slide"><a href="#">
+                    <div class="main_article_picture br-12 mt-4"><img class="hover-scale-105" src="images/card.png" alt="alt">
+                      <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="h3 fs-sm-32">Neque porro quisquam </div>
-                  <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="main_article_picture br-12 mt-4"><img src="images/card.png" alt="alt">
-                    <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                    <div class="h3 fs-24 fs-sm-32">Neque porro quisquam </div>
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p></a></div>
+                <div class="swiper-slide"><a href="#">
+                    <div class="main_article_picture br-12 mt-4"><img class="hover-scale-105" src="images/card.png" alt="alt">
+                      <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="h3 fs-sm-32">Neque porro quisquam </div>
-                  <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="main_article_picture br-12 mt-4"><img src="images/card.png" alt="alt">
-                    <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
-                      <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                    <div class="h3 fs-24 fs-sm-32">Neque porro quisquam </div>
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p></a></div>
+                <div class="swiper-slide"><a href="#">
+                    <div class="main_article_picture br-12 mt-4"><img class="hover-scale-105" src="images/card.png" alt="alt">
+                      <div class="bages p-1 d-flex g-1 fs-10 lh-24 text-uppercase">
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Чистые пруды</div>
+                        <div class="bages_item px-1 br-6 bg-primarybrown">Скидка</div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="h3 fs-sm-32">Neque porro quisquam </div>
-                  <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p>
-                </div>
+                    <div class="h3 fs-24 fs-sm-32">Neque porro quisquam </div>
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p></a></div>
               </div>
-              <div class="d-flex g-1 mt-4 d-lg-none" data-theme="dark">
-                <div class="control swiper-btn-prev"><i class="icon-Arrow-left"></i></div>
-                <div class="control swiper-btn-next"><i class="icon-Arrow-right"></i></div>
+              <div class="mt-4 d-lg-none">
+                <div class="d-inline-flex g-1">
+                  <div class="control control-dark swiper-btn-prev"><i class="icon-Arrow-left"></i></div>
+                  <div class="control control-dark swiper-btn-next"><i class="icon-Arrow-right"></i></div>
+                </div>
               </div>
             </div>
           </div>
@@ -338,8 +338,8 @@
                 <div class="text-uppercase fs-10 fw-500">Что делает нас лучшими</div>
               </div>
               <div class="d-flex flex-column g-3 align_items-flex-start">
-                <h2 class="h4 fs-sm-40 mt-0 mb-0">Quis autem vel eum iure reprehenderit</h2>
-                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p><a class="btn btn-secondary button button--calypso"><span>о компании</span></a>
+                <h2 class="h4 fs-sm-40 mt-0 mb-0 header_hidden_top">Quis autem vel eum iure reprehenderit</h2>
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p><a class="btn btn-secondary button button--calypso transparent"><span>о компании</span></a>
               </div>
             </div>
             <div class="col-3 col-md-2 col-lg-4">
@@ -469,9 +469,12 @@
         </div>
       </div>
       <div class="main_map py-2">
+        <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.full&amp;mode=release&amp;lang=ru-RU&amp;apikey=f1fb8309-94c0-4eca-b4ef-026a7584dbb1"> </script>
         <div class="container">
           <div class="main_map_wrapper br-16 bg-opacitydark-50">
-            <div class="main_map_back bg-white"><img src="images/Map.png" alt=""></div>
+            <div class="main_map_back bg-white"><img src="images/Map.png" alt="">
+              <div class="main_map_ymap"></div>
+            </div>
             <div class="main_map_front p-3 d-none d-md-block">
               <div class="row justify-content-end">
                 <div class="col-lg-3 col-md-2 br-12">
@@ -482,8 +485,8 @@
                            Приглашаем в <i>Savoy Wellness</i></div>
                         <div class="form_wellcome_fields d-flex flex-column g-1">
                           <div class="form-field">
-                            <select class="form-select">
-                              <option selected disabled>Выбрать клуб</option>
+                            <select class="form-select" required>
+                              <option selected disabled value="">Выбрать клуб</option>
                               <option>Чистые пруды</option>
                               <option>Новослободская</option>
                             </select>
@@ -518,13 +521,13 @@
             <div class="row">
               <div class="col-3 col-sm-2 col-lg-3 fs-15 py-2 d-flex flex-column g-3">
                 <div class="d-flex flex-column g-2">
-                  <h3 class="my-0">Quis autem vel eum iure reprehenderit</h3>
+                  <h3 class="my-0 header_hidden_top">Quis autem vel eum iure reprehenderit</h3>
                   <p class="my-0">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p>
                 </div>
                 <div class="d-block"><a class="btn btn-secondary button button--calypso"><span>Клубные карты</span></a></div>
               </div>
               <div class="col-3 col-sm-2 col-lg-4">
-                <nav class="d-flex flex-column"><a class="p-2" href="#" data-theme="light_"><span>Расписание занятий</span></a><a class="p-2" href="#"><span>Правила клуба</span></a><a class="p-2" href="#"><span>Блог</span></a><a class="p-2" href="#"><span>О компании</span></a><a class="p-2" href="#"><span>Контакты</span></a></nav>
+                <nav class="d-flex flex-column"><a class="p-2 filter-hover-invert nodecor" href="#" data-theme="dark"><span>Расписание занятий</span></a><a class="p-2 filter-hover-invert nodecor" href="#" data-theme="dark"><span>Правила клуба</span></a><a class="p-2 filter-hover-invert nodecor" href="#" data-theme="dark"><span>Блог</span></a><a class="p-2 filter-hover-invert nodecor" href="#" data-theme="dark"><span>О компании</span></a><a class="p-2 filter-hover-invert nodecor" href="#" data-theme="dark"><span>Контакты</span></a></nav>
               </div>
             </div>
             <div class="d-flex flex-column flex-lg-nowrap g-3 flex-md-row-reverse fs-12 justify-space-between pb-1">
@@ -556,7 +559,7 @@
                 <div class="fs-12">Свяжитесь с нами</div>
                 <div class="fs-32 fw-600 ff-playfair fs-sm-40">+7 (495) 775 35 35</div>
               </div>
-              <div class="d-flex justify-space-between py-half d-sm-none"><a class="button btn btn-secondary button--calypso"><i class="icon-Pluse"></i><span>Выбрать клуб</span></a>
+              <div class="d-flex justify-space-between py-half d-sm-none"><a class="button btn btn-secondary button--calypso" data-popup="club"><i class="icon-Pluse"></i><span>Выбрать клуб</span></a>
                 <div class="d-flex g-1"><a class="control control-social" href="//vk.com"><i class="icon-VK"></i></a><a class="control control-social" href="//vk.com"><i class="icon-Whatsapp"></i></a></div>
               </div>
             </footer>
@@ -573,8 +576,8 @@
                    Приглашаем в <i>Savoy Wellness</i></div>
                 <div class="form_wellcome_fields d-flex flex-column g-1">
                   <div class="form-field">
-                    <select class="form-select">
-                      <option selected disabled>Выбрать клуб</option>
+                    <select class="form-select" required>
+                      <option selected disabled value="">Выбрать клуб</option>
                       <option>Чистые пруды</option>
                       <option>Новослободская</option>
                     </select>
@@ -595,6 +598,14 @@
                 </div>
               </div>
             </form>
+          </div>
+        </div>
+      </div>
+      <div class="popup" data-name="club" data-opened="0">
+        <div class="d-flex flex-column align_items-center justify-center h-100 bg-opacitylight-80 p-6">
+          <div class="container popup-close text-right" data-popup="club"><i class="icon-Close bg-opacitydark-10 br-6"></i></div>
+          <div class="container">
+            <div class="bg-black color-white br-12 fs-10 text-nowrap text-uppercase"><a class="d-flex align-items-center g-half p-1 pl-2 justify-space-between layoutHeader_club" href="#"><span>Чистые пруды</span><i class="icon-Arrow-top-right bg-opacitydark-10 filter-invert br-6"></i></a><a class="d-flex align-items-center g-half p-1 pl-2 justify-space-between layoutHeader_club" href="#"><span>Новослободская</span><i class="icon-Arrow-top-right bg-opacitydark-10 filter-invert br-6"></i></a></div>
           </div>
         </div>
       </div>

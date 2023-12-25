@@ -5,7 +5,7 @@ a[class^="link-"], a[class*="link-"] {
 a{
     text-decoration: none;
     color: inherit;
-    &:hover:not(.btn){
+    &:hover:not(.btn):not(.link-accent):not(.nodecor){
         text-decoration: underline;
     }
     

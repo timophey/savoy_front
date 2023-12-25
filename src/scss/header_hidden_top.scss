@@ -1,0 +1,18 @@
+.header_hidden_top{
+    span{
+        display: inline-block;
+        white-space: nowrap;
+        transition: .3s ease .5s;
+        &.cshh{
+            overflow: hidden;
+            &-hidden{
+                span{
+                    transform: translateY(100%);
+                }
+            }
+        }
+    }
+    // span.cshh{
+
+    // }
+}

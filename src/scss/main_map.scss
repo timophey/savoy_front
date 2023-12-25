@@ -19,6 +19,12 @@
         min-height: 400px;
     }
 
+    &_ymap{
+        position: absolute; top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: var(--opacitylight-20);
+    }
+
     .form-field{
         .csinput{
             width: 100%;

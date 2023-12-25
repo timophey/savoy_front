@@ -33,8 +33,12 @@ function CSSpoiler(node) {
     toggle: actionToggle
   };
 }
-function CSAccordion(root) {
-  var listNodes = root.querySelectorAll('.spoiler');
+function CSAccordion(node) {
+  var listNodes = node.querySelectorAll('.spoiler');
+  var eventLeave = new CustomEvent('leave');
+  var eventComes = new CustomEvent('comes');
+  var eventLeaveHalf = new CustomEvent('leaveHalf');
+  var eventComesHalf = new CustomEvent('comesHalf');
   var arSpoiler = [];
   var switchOpened = function switchOpened(n) {
     arSpoiler.forEach(function (sp, i) {
@@ -43,8 +47,32 @@ function CSAccordion(root) {
   };
   listNodes.forEach(function (el, i) {
     arSpoiler[i] = new CSSpoiler(el);
-    el.addEventListener('opened', switchOpened.bind(root, i));
+    el.addEventListener('opened', switchOpened.bind(node, i));
   });
+  var visible = false;
+  var visibleHalf = false;
+  var windowScrollHandler = function windowScrollHandler() {
+    var wh = window.outerHeight;
+    var rect = node.getBoundingClientRect();
+    var by = rect.y;
+    var bb = wh - rect.bottom;
+    var vis = by < wh && bb < wh - 64;
+    // whole
+    if (vis != visible) {
+      node.dispatchEvent(vis ? eventComes : eventLeave);
+      console.log(vis ? 'come' : 'leave');
+      visible = vis;
+    }
+    // half
+    var vih = by < wh / 2 && bb < wh / 2 + 64; // && bbh < (wh/2-64)
+    //console.log('vih',vih,bb);
+    if (vih != visibleHalf) {
+      node.dispatchEvent(vih ? eventComesHalf : eventLeaveHalf);
+      console.log(vih ? 'comesHalf' : 'leaveHalf');
+      visibleHalf = vih;
+    }
+  };
+  window.addEventListener('scroll', windowScrollHandler);
 }
 document.addEventListener('DOMContentLoaded', function () {
   _toConsumableArray(document.querySelectorAll('.spoiler')).filter(function (el) {
@@ -122,7 +150,8 @@ function CSSelect(node) {
     rList.append(rItem);
     return rItem;
   });
-  console.log(rOpts);
+  // console.log(rOpts)
+
   var valueFromOriginal = function valueFromOriginal() {
     var i = node.options.selectedIndex;
     var op = node.options[i];
@@ -133,24 +162,25 @@ function CSSelect(node) {
     rPlace.innerHTML = op.innerHTML;
   };
   var actionExpand = function actionExpand() {
-    console.log('actionExpand');
+    // console.log('actionExpand')
     var bh = rList.scrollHeight;
     var rt = rRoot.getBoundingClientRect();
     var wh = window.outerHeight;
     var bt = wh - rt.bottom - rt.height * 2;
-    console.log(bh, bt, bh > bt);
+
+    // console.log(bh, bt, bh > bt)
     rRoot.classList.add('active');
     node.focus();
     rList.dataset.dno = bh > bt ? 1 : 0;
     rList.style.setProperty('height', "".concat(bh, "px"));
   };
   var actionCollapse = function actionCollapse() {
-    console.log('actionCollapse');
+    // console.log('actionCollapse')
     rRoot.classList.remove('active');
     rList.style.setProperty('height', null);
   };
   var actionToggle = function actionToggle() {
-    console.log('actionToggle');
+    // console.log('actionToggle')
     return rRoot.classList.contains('active') ? actionCollapse() : actionExpand();
   };
   rRoot.addEventListener('click', actionToggle);
@@ -172,6 +202,94 @@ document.addEventListener('DOMContentLoaded', function () {
     return new CSSelect(el);
   });
 });
+function CSHHTop(node) {
+  var eventLeave = new CustomEvent('leave');
+  var eventComes = new CustomEvent('comes');
+
+  // в заголовке могут быть текстовые и стилевые ноды
+  // console.log(node);
+
+  var getNodes = function getNodes(el) {
+    var nodes = [];
+    var list = el.childNodes;
+    list.forEach(function (nd) {
+      // console.log(nd,nd.tagName,nodes)
+      if (nd.tagName) nodes.push.apply(nodes, _toConsumableArray(getNodes(nd)));else nodes.push(nd);
+    });
+    return nodes;
+  };
+  var textNodes = getNodes(node);
+  var textSpans = [];
+  // console.log(textNodes);
+
+  var spanComesHandler = function spanComesHandler(i) {
+    // пока без проверок
+    // this.classList.remove('cshh-hidden');
+    // нужно показать слово, если оно на расстоянии себя от низа
+    var rect = this.getBoundingClientRect();
+    var wh = window.outerHeight;
+    var bb = wh - rect.bottom - rect.height,
+      by = rect.y;
+    if (bb > 64) {
+      this.classList.remove('cshh-hidden');
+    }
+    // if(!i)
+    //     console.log(this.innerText,`${by} < ${wh}`,by < wh,'bb',bb,'bb > 64',bb > 64)
+  };
+  textNodes.forEach(function (nd) {
+    var words = nd.textContent.split(' ');
+    // console.log(words)
+
+    words.forEach(function (sw, i, ar) {
+      var wrap0 = document.createElement('span');
+      // wrap0.style.display='inline-block'; // moved to css
+      wrap0.className = 'cshh cshh-hidden';
+      wrap0.addEventListener('comes', spanComesHandler.bind(wrap0, i));
+      var wrap1 = document.createElement('span');
+      // wrap1.style.display='inline-block';  // moved to css
+      wrap1.innerText = sw;
+      wrap0.append(wrap1);
+      nd.parentElement.insertBefore(wrap0, nd);
+      // wrap0.append()
+      if (i < ar.length - 1) {
+        nd.parentElement.insertBefore(document.createTextNode(' '), nd);
+      }
+      textSpans.push(wrap0);
+    });
+    nd.remove();
+  });
+  var visible = false;
+  var visibleHalf = false;
+  var windowScrollHandler = function windowScrollHandler() {
+    var wh = window.outerHeight;
+    var rect = node.getBoundingClientRect();
+    var by = rect.y;
+    var bb = wh - rect.bottom;
+    var vis = by < wh && bb < wh - 64;
+    if (vis != visible) {
+      // console.log('CSHHTop visible',vis);
+      // ask each span test homself if visible =)
+    }
+    if (vis) textSpans.filter(function (el) {
+      return el.matches('.cshh-hidden');
+    }).forEach(function (el) {
+      return el.dispatchEvent(eventComes);
+    });
+    visible = vis;
+    var vih = by < wh / 2 && bb < wh / 2 + 64;
+    if (vih != visibleHalf) {
+      // node.dispatchEvent(vih ? eventComesHalf : eventLeaveHalf);
+      // console.log(vih ? 'CSHHTop comesHalf' : 'CSHHTop leaveHalf');
+    }
+    visibleHalf = vih;
+  };
+  window.addEventListener('scroll', windowScrollHandler);
+}
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.header_hidden_top').forEach(function (el) {
+    return new CSHHTop(el);
+  });
+});
 var elHeader;
 document.addEventListener('DOMContentLoaded', function () {
   elHeader = document.querySelector('.siteWrapper header');
@@ -188,7 +306,7 @@ var windowScrollHandler = function windowScrollHandler(e) {
   }
 };
 window.addEventListener('scroll', windowScrollHandler);
-document.addEventListener('DOMContentLoaded', function () {
+function init_faq() {
   document.querySelectorAll('.main_faq .spoiler').forEach(function (el) {
     el.addEventListener('opened', function (e) {
       var el = e.target;
@@ -196,6 +314,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!color) return;
       var root = el.closest('.main_faq');
       if (!root) return;
+      document.body.style.setProperty('background-color', color);
       root.style.setProperty('background-color', color);
       // console.log(color,root)
     });
@@ -205,10 +324,91 @@ document.addEventListener('DOMContentLoaded', function () {
       var root = el.closest('.main_faq');
       if (!root) return;
       root.style.setProperty('background-color', null);
+      document.body.style.setProperty('background-color', null);
       // console.log(color,root)
     });
   });
-});
+  var leaveHandler = function leaveHandler() {
+    console.log('leaveHalf leaveHandler');
+    var cl = this.closest('.main_faq');
+    document.body.style.setProperty('background-color', null);
+    // и фон блока тоже деактиаируем
+    cl.classList.add('leaveHalf');
+  };
+  var comesHandler = function comesHandler() {
+    console.log('comesHalf comesHandler');
+    var cl = this.closest('.main_faq');
+    if (cl) {
+      document.body.style.setProperty('background-color', cl.style.backgroundColor);
+    }
+    cl.classList.remove('leaveHalf');
+    // console.log(this)
+  };
+  document.querySelectorAll('.accordion').forEach(function (el) {
+    el.addEventListener('leaveHalf', leaveHandler.bind(el));
+    el.addEventListener('comesHalf', comesHandler.bind(el));
+  });
+}
+document.addEventListener('DOMContentLoaded', init_faq);
+function initMainMap() {
+  var node = document.querySelector('.main_map_ymap');
+  if (!node) return;
+  var arPoints = [{
+    name: 'Чистые пруды',
+    latlng: [55.7666, 37.638495]
+  }, {
+    name: 'Новослободская',
+    latlng: [55.775626, 37.601317]
+  }];
+  var mapCenter = [arPoints.map(function (item) {
+    return item.latlng[0];
+  }).reduce(function (a, b) {
+    return a + b;
+  }, 0) / arPoints.length, arPoints.map(function (item) {
+    return item.latlng[1];
+  }).reduce(function (a, b) {
+    return a + b;
+  }, 0) / arPoints.length];
+  console.log(mapCenter);
+  console.log([57.140045511428, 65.576221868052]);
+  var map = new ymaps.Map(node, {
+    // center: [57.140045511428, 65.576221868052],
+    center: mapCenter,
+    zoom: 13,
+    type: 'yandex#map'
+    // adjustZoomOnTypeChange: true
+  });
+  arPoints.forEach(function (item) {
+    var mark = new ymaps.Placemark(item.latlng, {
+      // iconContent: 'Москва', 
+      hintContent: item.name,
+      hintFitPane: false
+    }, {
+      iconLayout: 'default#image',
+      iconImageHref: 'images/icon_mark.svg',
+      iconImageSize: [32, 32],
+      hideIconOnBalloonOpen: false
+    });
+    var hint1 = new ymaps.Hint(item.name, item.latlng, {
+      // maxWidth: 200
+    });
+    console.log(map);
+    // map.hint.add(hint1);
+    // mark.hint.open();
+    // mark.events.add('mouseenter', function(e){
+    //     console.log('mouseenter',mark)
+    //     mark.balloon.open();
+    // })
+    // mark.events.add('mouseleave', function(e){
+    //     mark.balloon.close();
+    // })
+
+    map.geoObjects.add(mark);
+  });
+
+  // mouseenter
+}
+window.addEventListener('load', initMainMap);
 function CSSlider(node) {
   // timings
   var autoDelay = 5000;
@@ -395,6 +595,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+function initParallax() {
+  var images = document.getElementsByClassName('image-transform');
+  new simpleParallax(images, {
+    delay: .3,
+    transition: 'cubic-bezier(0,0,0,1)'
+  });
+}
+document.addEventListener('DOMContentLoaded', initParallax);
 
 // popups
 
@@ -435,3 +643,29 @@ var initPopups = function initPopups() {
   // }));
 };
 document.addEventListener('DOMContentLoaded', initPopups);
+var initSmooth = function initSmooth() {
+  SmoothScroll({
+    // Время скролла 400 = 0.4 секунды
+    animationTime: 600,
+    // Размер шага в пикселях 
+    stepSize: 55,
+    // Дополнительные настройки:
+
+    // Ускорение 
+    accelerationDelta: 30,
+    // Максимальное ускорение
+    accelerationMax: 2,
+    // Поддержка клавиатуры
+    keyboardSupport: true,
+    // Шаг скролла стрелками на клавиатуре в пикселях
+    arrowScroll: 50,
+    // Pulse (less tweakable)
+    // ratio of "tail" to "acceleration"
+    pulseAlgorithm: true,
+    pulseScale: 4,
+    pulseNormalize: 1,
+    // Поддержка тачпада
+    touchpadSupport: true
+  });
+};
+document.addEventListener('DOMContentLoaded', initSmooth);

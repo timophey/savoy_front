@@ -47,7 +47,7 @@ export const scriptsBuild = () => {
 }
 
 export const vendorBuild = () => {
-    return src(`${config.src.js}/vendor/*.js`)
+    return src(`${config.src.js}/vendor/*.min.js`)
         .pipe(concat('vendor.js'))
         // .pipe(babel({presets: ["@babel/preset-env"]}))
         .pipe(dest(`${config.dest.js}`));

@@ -56,10 +56,9 @@
 
 // @use "sass:string";
 
-$_COLORS_ALL: ('--black','--white','--primarybrown','--opacitydark-90','--opacitydark-80','--opacitydark-70','--opacitydark-60','--opacitydark-50','--opacitydark-40','--opacitydark-30','--opacitydark-20','--opacitydark-10','--opacitydark-5','--opacitylight-90','--opacitylight-80','--opacitylight-70','--opacitylight-60','--opacitylight-50','--opacitylight-40','--opacitylight-30','--opacitylight-20','--opacitylight-10','--opacitylight-5','--actioninfo-light','--actioninfo-light-hover','--actioninfo-medium','--actioninfo-medium-hover','--actioninfo-heavy','--actioninfo-heavy-hover','--actionpositive-light','--actionpositive-light-hover','--actionpositive-medium','--actionpositive-medium-hover','--actionpositive-heavy','--actionpositive-heavy-hover','--actionwarning-light','--actionwarning-light-hover','--actionwarning-medium','--actionwarning-medium-hover','--actionwarning-heavy','--actionwarning-heavy-hover','--actionneutral-light','--actionneutral-light-hover','--actionneutral-medium','--actionneutral-medium-hover','--actionneutral-heavy','--actionneutral-heavy-hover','--actiondanger-light','--actiondanger-light-hover','--actiondanger-medium','--actiondanger-medium-hover','--actiondanger-heavy','--actiondanger-heavy-hover');
+$_COLORS_ALL: ('--black','--white','--primarybrown','--opacitydark-90','--opacitydark-80','--opacitydark-70','--opacitydark-60','--opacitydark-50','--opacitydark-40','--opacitydark-30','--opacitydark-20','--opacitydark-10','--opacitydark-5','--opacitylight-90','--opacitylight-80','--opacitylight-70','--opacitylight-60','--opacitylight-50','--opacitylight-40','--opacitylight-30','--opacitylight-20','--opacitylight-10','--opacitylight-5','--actioninfo-light','--actioninfo-light-hover','--actioninfo-medium','--actioninfo-medium-hover','--actioninfo-heavy','--actioninfo-heavy-hover','--actionpositive-light','--actionpositive-light-hover','--actionpositive-medium','--actionpositive-medium-hover','--actionpositive-heavy','--actionpositive-heavy-hover','--actionwarning-light','--actionwarning-light-hover','--actionwarning-medium','--actionwarning-medium-hover','--actionwarning-heavy','--actionwarning-heavy-hover','--actionneutral-light','--actionneutral-light-hover','--actionneutral-medium','--actionneutral-medium-hover','--actionneutral-heavy','--actionneutral-heavy-hover','--actiondanger-light','--actiondanger-light-hover','--actiondanger-medium','--actiondanger-medium-hover','--actiondanger-heavy','--actiondanger-heavy-hover','transparent');
 // css.filter(cl => !cl.endsWith('-hover')).map(cl => cl.substring(2))
-$_COLORS_STATIC: ('black', 'white', 'primarybrown', 'opacitydark-90', 'opacitydark-80', 'opacitydark-70', 'opacitydark-60', 'opacitydark-50', 'opacitydark-40', 'opacitydark-30', 'opacitydark-20', 'opacitydark-10', 'opacitydark-5', 'opacitylight-90', 'opacitylight-80', 'opacitylight-70', 'opacitylight-60', 'opacitylight-50', 'opacitylight-40', 'opacitylight-30', 'opacitylight-20', 'opacitylight-10', 'opacitylight-5', 'actioninfo-light', 'actioninfo-medium', 'actioninfo-heavy', 'actionpositive-light', 'actionpositive-medium', 'actionpositive-heavy', 'actionwarning-light', 'actionwarning-medium', 'actionwarning-heavy', 'actionneutral-light', 'actionneutral-medium', 'actionneutral-heavy', 'actiondanger-light', 'actiondanger-medium', 'actiondanger-heavy');
-// css.filter(cl => cl.endsWith('-hover')).map(cl => cl.substring(2,cl.length-6))
+$_COLORS_STATIC: ('black', 'white', 'primarybrown', 'opacitydark-90', 'opacitydark-80', 'opacitydark-70', 'opacitydark-60', 'opacitydark-50', 'opacitydark-40', 'opacitydark-30', 'opacitydark-20', 'opacitydark-10', 'opacitydark-5', 'opacitylight-90', 'opacitylight-80', 'opacitylight-70', 'opacitylight-60', 'opacitylight-50', 'opacitylight-40', 'opacitylight-30', 'opacitylight-20', 'opacitylight-10', 'opacitylight-5', 'actioninfo-light', 'actioninfo-medium', 'actioninfo-heavy', 'actionpositive-light', 'actionpositive-medium', 'actionpositive-heavy', 'actionwarning-light', 'actionwarning-medium', 'actionwarning-heavy', 'actionneutral-light', 'actionneutral-medium', 'actionneutral-heavy', 'actiondanger-light', 'actiondanger-medium', 'actiondanger-heavy','transparent');// css.filter(cl => cl.endsWith('-hover')).map(cl => cl.substring(2,cl.length-6))
 $_COLORS_HOVER: ('actioninfo-light', 'actioninfo-medium', 'actioninfo-heavy', 'actionpositive-light', 'actionpositive-medium', 'actionpositive-heavy', 'actionwarning-light', 'actionwarning-medium', 'actionwarning-heavy', 'actionneutral-light', 'actionneutral-medium', 'actionneutral-heavy', 'actiondanger-light', 'actiondanger-medium', 'actiondanger-heavy');
 @each $name in $_COLORS_STATIC{
     .color-#{$name}{
@@ -78,6 +77,10 @@ $_COLORS_HOVER: ('actioninfo-light', 'actioninfo-medium', 'actioninfo-heavy', 'a
     }
 }
 
-.filter-invert{
+.filter-invert, .filter-hover-invert:hover{
     filter: invert(1);
+}
+
+.filter-hover-invert{
+    transition: .3s ease;
 }

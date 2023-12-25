@@ -1,11 +1,11 @@
 .container
-    .main_places(data-theme="dark").row.flex-column.flex-sm-row.cg-3.pb-10.mt-4.border-top.border-bottom.pb-lg-0
+    .main_places(data-theme="dark").row.flex-column.flex-sm-row.align_items-sm-stretch.cg-3.pb-10.mt-4.border-top.border-bottom.pb-lg-0
         .main_places_preview.mb-1.col-3.col-lg-3.mb-lg-0
-            h1.fs-32 Quis autem vel eum iure reprehenderit
+            h1.fs-32.header_hidden_top Quis autem vel eum iure reprehenderit
             p Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma
         .main_places_card.d-flex.flex-column.g-2.col-3.col-sm-2.col-lg-2.pb-lg-10.pt-lg-3
             .main_places_picture.br-12
-                img(src="images/place1.png", alt="")
+                img.hover-scale-105(src="images/place1.png", alt="")
             .d-flex.flex-column.g-3
                 .main_places_content
                     .h5 Чистые пруды
@@ -17,11 +17,11 @@
                 .main_places_actions.d-flex.g-1
                     a.button.btn.btn-primary.button--calypso
                         span Выбрать клуб
-                    a.button.btn.btn-secondary.button--calypso
+                    a(target="_blank",href="https://2gis.ru/moscow/branches/70000001038779393/firm/70000001038779394?m=37.638495%2C55.7666%2F18.74").button.btn.btn-secondary.button--calypso
                         span Показать В 2Gis
         .main_places_card.d-flex.flex-column.g-2.col-3.col-sm-2.col-lg-2.pb-lg-10.pt-lg-3
             .main_places_picture.br-12
-                img(src="images/place2.png", alt="")
+                img.hover-scale-105(src="images/place2.png", alt="")
             .d-flex.flex-column.g-3
                 .main_places_content
                     .h5 Новослободская
@@ -33,5 +33,5 @@
                 .main_places_actions.d-flex.g-1
                     a.button.btn.btn-primary.button--calypso
                         span Выбрать клуб
-                    a.button.btn.btn-secondary.button--calypso
+                    a(target="_blank",href="https://2gis.ru/moscow/branches/70000001038779393/firm/70000001040592434/37.601317%2C55.775626?m=37.601567%2C55.775573%2F19.09").button.btn.btn-secondary.button--calypso
                         span Показать В 2Gis

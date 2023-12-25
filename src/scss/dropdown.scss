@@ -1,0 +1,15 @@
+.dropdown{
+    position: relative;
+    &_body{
+        position: absolute;
+        top: 100%; left:0;
+        overflow: hidden;
+        height: auto;
+        transition: .5s;
+        opacity: 1;
+    }
+    &:not(:hover) &_body{
+        height: 0;
+        opacity: 0;
+    }
+}
