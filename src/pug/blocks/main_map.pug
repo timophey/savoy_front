@@ -5,10 +5,15 @@
             .main_map_back.bg-white
                 img(src="images/Map.png", alt="")
                 .main_map_ymap
-            .main_map_front.p-3.d-none.d-md-block
+            //- .main_map_front.p-3.d-none.d-md-block
                 .row.justify-content-end
                     .col-lg-3.col-md-2.br-12
                         include form_wellcome
+            //- .main_map_front.p-3.d-none.d-md-flex.row.justify-content-end
+            //-     .col-lg-3.col-md-2.br-12
+            //-         include form_wellcome
+            .main_map_front.p-3.d-none.d-md-block.col-lg-3.col-md-2.br-12.ml-auto
+                include form_wellcome
             .main_map_front.p-2.d-flex.d-md-none.flex-column.justify-flex-end
                 a.btn.btn-primary.button.button--calypso.text-center.justify-center(data-popup="contact")
                     span Оформить клубную карту

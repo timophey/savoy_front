@@ -34,6 +34,12 @@ $_spaces: (
         margin-left: $n;
         margin-right: $n;
     }
+    .ml-#{$x}{
+        margin-left: $n;
+    }
+    .mr-#{$x}{
+        margin-right: $n;
+    }
     .my-#{$x}{
         margin-top: $n;
         margin-bottom: $n;

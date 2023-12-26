@@ -215,13 +215,13 @@
         <div class="container">
           <div class="row border-top"></div>
           <div class="main_cards_head">
-            <div class="row mt-4 align-items-center justify-space-between align_items-md-flex-start">
+            <div class="row pt-4 align-items-center justify-space-between align_items-md-flex-start">
               <div class="col-3 col-sm-3 col-md-1 col-lg-3 d-flex align_items-center"><i class="icon-Point"></i>
-                <div class="text-uppercase fs-10 fw-500">клубные карты SAVOY</div>
+                <div class="text-uppercase fs-10 fw-500">Клубные карты SAVOY</div>
               </div>
-              <div class="col-sm d-none d-sm-flex d-md-none g-1" data-theme="dark">
-                <div class="control swiper-btn-prev"><i class="icon-Arrow-left"></i></div>
-                <div class="control swiper-btn-next"><i class="icon-Arrow-right"></i></div>
+              <div class="col-sm d-none d-sm-flex d-md-none g-1">
+                <div class="control control-dark swiper-btn-prev"><i class="icon-Arrow-left"></i></div>
+                <div class="control control-dark swiper-btn-next"><i class="icon-Arrow-right"></i></div>
               </div>
               <div class="col-3 col-md-3 col-lg-4">
                 <div class="row justify-space-between">
@@ -320,7 +320,7 @@
                     <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p></a></div>
               </div>
               <div class="mt-4 d-lg-none">
-                <div class="d-inline-flex g-1">
+                <div class="d-inline-flex d-sm-none g-1">
                   <div class="control control-dark swiper-btn-prev"><i class="icon-Arrow-left"></i></div>
                   <div class="control control-dark swiper-btn-next"><i class="icon-Arrow-right"></i></div>
                 </div>
@@ -475,40 +475,36 @@
             <div class="main_map_back bg-white"><img src="images/Map.png" alt="">
               <div class="main_map_ymap"></div>
             </div>
-            <div class="main_map_front p-3 d-none d-md-block">
-              <div class="row justify-content-end">
-                <div class="col-lg-3 col-md-2 br-12">
-                  <div class="bg-black color-white br-12">
-                    <form>
-                      <div class="form_wellcome p-4 d-flex flex-column g-4" data-theme="light">
-                        <div class="h2 text-center">
-                           Приглашаем в <i>Savoy Wellness</i></div>
-                        <div class="form_wellcome_fields d-flex flex-column g-1">
-                          <div class="form-field">
-                            <select class="form-select" required>
-                              <option selected disabled value="">Выбрать клуб</option>
-                              <option>Чистые пруды</option>
-                              <option>Новослободская</option>
-                            </select>
-                          </div>
-                          <div class="form-field">
-                            <input class="form-input" type="text" placeholder="Ваше имя">
-                          </div>
-                          <div class="form-field">
-                            <input class="form-input" type="text" placeholder="Телефон">
-                          </div>
-                        </div>
-                        <div class="form-field text-center">
-                          <button class="btn btn-primary button button--calypso text-center justify-center" type="submit"><span>Отправить</span></button>
-                          <p>Нажимая на кнопку отправить вы соглашаетесь на обработку персональных данных</p>
-                        </div>
-                        <div class="form-field text-center">
-                          <div class="btn btn-secondary button button--calypso text-center justify-center d-inline-block"><i class="icon-Whatsapp"></i><span>Написать в whatsapp</span></div>
-                        </div>
+            <div class="main_map_front p-3 d-none d-md-block col-lg-3 col-md-2 br-12 ml-auto">
+              <div class="bg-black color-white br-12">
+                <form>
+                  <div class="form_wellcome p-4 d-flex flex-column g-4" data-theme="light">
+                    <div class="h2 text-center">
+                       Приглашаем в <i>Savoy Wellness</i></div>
+                    <div class="form_wellcome_fields d-flex flex-column g-1">
+                      <div class="form-field">
+                        <select class="form-select" required>
+                          <option selected disabled value="">Выбрать клуб</option>
+                          <option>Чистые пруды</option>
+                          <option>Новослободская</option>
+                        </select>
                       </div>
-                    </form>
+                      <div class="form-field">
+                        <input class="form-input" type="text" placeholder="Ваше имя">
+                      </div>
+                      <div class="form-field">
+                        <input class="form-input" type="text" placeholder="Телефон">
+                      </div>
+                    </div>
+                    <div class="form-field text-center">
+                      <button class="btn btn-primary button button--calypso text-center justify-center" type="submit"><span>Отправить</span></button>
+                      <p>Нажимая на кнопку отправить вы соглашаетесь на обработку персональных данных</p>
+                    </div>
+                    <div class="form-field text-center">
+                      <div class="btn btn-secondary button button--calypso text-center justify-center d-inline-block"><i class="icon-Whatsapp"></i><span>Написать в whatsapp</span></div>
+                    </div>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
             <div class="main_map_front p-2 d-flex d-md-none flex-column justify-flex-end"><a class="btn btn-primary button button--calypso text-center justify-center" data-popup="contact"><span>Оформить клубную карту</span></a></div>

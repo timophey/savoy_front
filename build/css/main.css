@@ -1036,6 +1036,14 @@ body {
   margin-right: 4px;
 }
 
+.ml-half {
+  margin-left: 4px;
+}
+
+.mr-half {
+  margin-right: 4px;
+}
+
 .my-half {
   margin-top: 4px;
   margin-bottom: 4px;
@@ -1093,6 +1101,14 @@ body {
 
 .mx-1 {
   margin-left: 8px;
+  margin-right: 8px;
+}
+
+.ml-1 {
+  margin-left: 8px;
+}
+
+.mr-1 {
   margin-right: 8px;
 }
 
@@ -1156,6 +1172,14 @@ body {
   margin-right: 16px;
 }
 
+.ml-2 {
+  margin-left: 16px;
+}
+
+.mr-2 {
+  margin-right: 16px;
+}
+
 .my-2 {
   margin-top: 16px;
   margin-bottom: 16px;
@@ -1213,6 +1237,14 @@ body {
 
 .mx-3 {
   margin-left: 24px;
+  margin-right: 24px;
+}
+
+.ml-3 {
+  margin-left: 24px;
+}
+
+.mr-3 {
   margin-right: 24px;
 }
 
@@ -1276,6 +1308,14 @@ body {
   margin-right: 32px;
 }
 
+.ml-4 {
+  margin-left: 32px;
+}
+
+.mr-4 {
+  margin-right: 32px;
+}
+
 .my-4 {
   margin-top: 32px;
   margin-bottom: 32px;
@@ -1333,6 +1373,14 @@ body {
 
 .mx-5 {
   margin-left: 40px;
+  margin-right: 40px;
+}
+
+.ml-5 {
+  margin-left: 40px;
+}
+
+.mr-5 {
   margin-right: 40px;
 }
 
@@ -1396,6 +1444,14 @@ body {
   margin-right: 48px;
 }
 
+.ml-6 {
+  margin-left: 48px;
+}
+
+.mr-6 {
+  margin-right: 48px;
+}
+
 .my-6 {
   margin-top: 48px;
   margin-bottom: 48px;
@@ -1453,6 +1509,14 @@ body {
 
 .mx-8 {
   margin-left: 64px;
+  margin-right: 64px;
+}
+
+.ml-8 {
+  margin-left: 64px;
+}
+
+.mr-8 {
   margin-right: 64px;
 }
 
@@ -1516,6 +1580,14 @@ body {
   margin-right: 80px;
 }
 
+.ml-10 {
+  margin-left: 80px;
+}
+
+.mr-10 {
+  margin-right: 80px;
+}
+
 .my-10 {
   margin-top: 80px;
   margin-bottom: 80px;
@@ -1576,6 +1648,14 @@ body {
   margin-right: auto;
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
@@ -1633,6 +1713,14 @@ body {
 
 .mx-0 {
   margin-left: 0;
+  margin-right: 0;
+}
+
+.ml-0 {
+  margin-left: 0;
+}
+
+.mr-0 {
   margin-right: 0;
 }
 
@@ -3023,12 +3111,24 @@ body:not([data-popup-opened]) .hasHero header[data-theme=light] .btn i {
   left: 0;
 }
 
+.main_article .simpleParallax {
+  height: 100%;
+  width: 100%;
+}
+
 .main_map .br-16 {
   border: 1px solid var(--opacitydark-20, rgba(0, 0, 0, 0.2));
 }
 
 .main_map_wrapper {
   position: relative;
+  min-height: 400px;
+}
+
+.main_map_wrapper > div:last-child {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .main_map_back {
@@ -3046,7 +3146,8 @@ body:not([data-popup-opened]) .hasHero header[data-theme=light] .btn i {
 }
 
 .main_map_front {
-  min-height: 400px;
+  position: relative;
+  z-index: 650;
 }
 
 .main_map_ymap {

@@ -5,6 +5,11 @@
     }
     &_wrapper{
         position: relative;
+        min-height: 400px;
+        > div:last-child{
+            position: absolute;
+            bottom: 0; width: 100%;
+        }
     }
     &_back{
         position: absolute;
@@ -16,7 +21,8 @@
         }
     }
     &_front{
-        min-height: 400px;
+        position: relative;
+        z-index: 650;
     }
 
     &_ymap{

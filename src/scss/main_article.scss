@@ -21,6 +21,10 @@ $_AR: (
             top:0;left:0;
         }
     }
+    .simpleParallax{
+        height: 100%;
+        width: 100%;
+    }
     @each $name, $min, $size, $ratio in $_AR{
         @media screen and (min-width: $min){
             &_picture{
