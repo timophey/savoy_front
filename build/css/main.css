@@ -3147,7 +3147,6 @@ body:not([data-popup-opened]) .hasHero header[data-theme=light] .btn i {
 
 .main_map_front {
   position: relative;
-  z-index: 650;
 }
 
 .main_map_ymap {
