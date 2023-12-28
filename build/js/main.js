@@ -94,6 +94,10 @@ function CSInput(node) {
   elLabel.className = 'csinput-label';
   elLabel.innerText = node.placeholder;
   rRoot.append(elLabel);
+  var elInvalid = document.createElement('div');
+  elInvalid.className = 'csinput-invalid color-actiondanger-heavy';
+  elInvalid.innerText = '';
+  rRoot.append(elInvalid);
   var checkDirty = function checkDirty() {
     var isEmpty = String(node.value).trim().length == 0;
     rRoot.dataset.dirty = isEmpty ? 0 : 1;
@@ -104,6 +108,18 @@ function CSInput(node) {
   var onBlur = function onBlur() {
     rRoot.classList.remove('active');
     checkDirty();
+    checkValid();
+  };
+  var checkValid = function checkValid() {
+    var v = node.validity;
+    rRoot.dataset.invalid = v.valid ? 1 : 0;
+    elInvalid.innerText = node.validationMessage;
+    // if(v.valid){
+    //     rRoot.classList.remove('invalid');
+    //     elInvalid.innerText = '';
+    // }else{
+    //     rRoot.classList.add('invalid');
+    // }
   };
   elLabel.addEventListener('click', function () {
     node.focus();
@@ -120,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function CSSelect(node) {
   var rRoot = document.createElement('div');
   rRoot.className = 'csselect';
+  var preventEvents = false;
   node.parentElement.append(rRoot);
   var rValue = document.createElement('div');
   rValue.className = 'csselect-value';
@@ -131,6 +148,12 @@ function CSSelect(node) {
   rValue.append(rPlace);
   var rList = document.createElement('div');
   rList.className = 'csselect-list';
+  addEventListener("transitionstart", function (event) {
+    preventEvents = true;
+  });
+  addEventListener("transitionend", function (event) {
+    preventEvents = false;
+  });
   rRoot.append(rList);
   var rTrigger = document.createElement('div');
   rTrigger.className = 'csselect-trigger';
@@ -162,7 +185,8 @@ function CSSelect(node) {
     rPlace.innerHTML = op.innerHTML;
   };
   var actionExpand = function actionExpand() {
-    // console.log('actionExpand')
+    if (preventEvents) return;
+    console.log('actionExpand');
     var bh = rList.scrollHeight;
     var rt = rRoot.getBoundingClientRect();
     var wh = window.outerHeight;
@@ -175,19 +199,25 @@ function CSSelect(node) {
     rList.style.setProperty('height', "".concat(bh, "px"));
   };
   var actionCollapse = function actionCollapse() {
-    // console.log('actionCollapse')
+    if (preventEvents) return;
+    console.log('actionCollapse');
     rRoot.classList.remove('active');
     rList.style.setProperty('height', null);
   };
-  var actionToggle = function actionToggle() {
-    // console.log('actionToggle')
+  var actionToggle = function actionToggle(e) {
+    if (preventEvents) return;
+    console.log('actionToggle', e.type);
     return rRoot.classList.contains('active') ? actionCollapse() : actionExpand();
   };
-  rRoot.addEventListener('click', actionToggle);
+  var handleBlur = function handleBlur(e) {
+    setTimeout(actionCollapse, 146);
+    // ();
+  };
+
+  // открытие
+  rValue.addEventListener('click', actionToggle);
   node.addEventListener('change', valueFromOriginal);
-  node.addEventListener('blur', function () {
-    return setTimeout(actionCollapse, 100);
-  });
+  node.addEventListener('blur', handleBlur);
 
   // node.style.setProperty('visibility','none');
 
@@ -333,7 +363,7 @@ function init_faq() {
     var cl = this.closest('.main_faq');
     document.body.style.setProperty('background-color', null);
     // и фон блока тоже деактиаируем
-    cl.classList.add('leaveHalf');
+    if (cl) cl.classList.add('leaveHalf');
   };
   var comesHandler = function comesHandler() {
     console.log('comesHalf comesHandler');
@@ -341,7 +371,7 @@ function init_faq() {
     if (cl) {
       document.body.style.setProperty('background-color', cl.style.backgroundColor);
     }
-    cl.classList.remove('leaveHalf');
+    if (cl) cl.classList.remove('leaveHalf');
     // console.log(this)
   };
   document.querySelectorAll('.accordion').forEach(function (el) {
@@ -645,6 +675,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+function initPhoneMask(node) {
+  var maskOptions = {
+    mask: '+{7} (000) 000-00-00'
+  };
+  var mask = IMask(node, maskOptions);
+}
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('input[name*="phone"],input[name*="PHONE"]').forEach(initPhoneMask);
+});
 function initParallax() {
   var images = document.getElementsByClassName('image-transform');
   new simpleParallax(images, {
@@ -693,6 +732,30 @@ var initPopups = function initPopups() {
   // }));
 };
 document.addEventListener('DOMContentLoaded', initPopups);
+function CSCome(node) {
+  var visible = false;
+  var windowScrollHandler = function windowScrollHandler() {
+    var wh = window.outerHeight;
+    var rect = node.getBoundingClientRect();
+    var by = rect.y;
+    var bb = wh - rect.bottom;
+    var vis = by < wh && bb < wh - 64;
+    // console.log(vis)
+    if (vis != visible) {
+      if (vis) {
+        node.classList.remove('wait-come');
+        window.removeEventListener('scroll', windowScrollHandler);
+      }
+    }
+    visible = vis;
+  };
+  window.addEventListener('scroll', windowScrollHandler);
+}
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.wait-come').forEach(function (el) {
+    return new CSCome(el);
+  });
+});
 var initSmooth = function initSmooth() {
   SmoothScroll({
     // Время скролла 400 = 0.4 секунды

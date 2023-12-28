@@ -9,9 +9,7 @@
             object-fit: cover;
         }
     }
-    // &_content{
-        
-    // }
+
     @media screen and (min-width: $_LG){
         &_preview{
             padding-right: 36px !important;
@@ -21,7 +19,12 @@
                 content: ""; display: block; width: 1px; height: 100%;
                 position: absolute; top: 0; right: calc(var(--gap) / 2);
                 background-color: var(--opacitydark-20);
+                transition: height 1s linear 1.5s;
+                .wait-come &{
+                    height: 0;
+                }
             }
+
         }
     }
 }

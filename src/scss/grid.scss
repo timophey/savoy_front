@@ -85,14 +85,18 @@
             content: ''; display: block; width: calc(100% - var(--gap)); height: 0;
             position: absolute; top: 0; left: calc(var(--gap) / 2);
             border-top: 1px solid var(--opacitydark-20);
+            transition: width 1s linear .5s;
         
     }
     &.border-bottom:after{
         content: ''; display: block; width: calc(100% - var(--gap)); height: 0;
         position: absolute; bottom: 0; left: calc(var(--gap) / 2);
         border-bottom: 1px solid var(--opacitydark-20);
+        transition: width 1s linear 2.5s;
     }
+
 }
+
 .row > [class^="col-"],.row > [class*=" col-"]{
     transition: .3s;
     padding-left: calc(var(--gap) / 2);

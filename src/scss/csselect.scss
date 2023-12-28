@@ -33,13 +33,16 @@
         }
     }
     &-list{
-        background-color: var(--op);
+        // background-color: var(--op);
+        background-color: var(--ex);
+        filter: invert(1);
         border-radius: 12px;
         position: absolute;
         top: calc(100% + 2px); left:0; z-index: 10;
         width: 100%;
-        height: 0; overflow: hidden;
-        transition: .3s;
+        height: 0; 
+        overflow: hidden;
+        transition: 300ms;
         &[data-dno="1"]{
             bottom: calc(100% + 2px); top:auto;
         }
@@ -53,15 +56,17 @@
     }
     &-item{
         padding: 12px 16px;
-        background-color: var(--bg);
-        &:hover{
-            background-color: var(--hw);
-        }
+    }
+    &.active &-item{
+        background-color: var(--bgi);
         &.active{
             background-color: var(--ac);
         }
+        &:hover{
+            background-color: var(--hw);
+        }
     }
-    &.active &-value{
+    &.active &-value{ /*, &.active &-item*/
         background: var(--ex);
         filter: invert(1);
     }
@@ -69,13 +74,24 @@
         --bg: var(--opacitydark-10);
         --hw: var(--opacitydark-20);
         --ac: var(--opacitydark-5);
+
+        --bgi: var(--opacitylight-10);
+        --hwi: var(--opacitylight-20);
+        --aci: var(--opacitylight-5);
+
         --ex: var(--white);
         --op: var(--white);
+    }
+    [data-theme="dark"] &-list,&-dark &-list{
+        filter: invert(1);
     }
     [data-theme="light"] &,&-light{
         --bg: var(--opacitylight-20);
         --hw: var(--opacitylight-30);    
         --ac: var(--opacitylight-5);
+        --bgi: var(--opacitydark-20);
+        --hwi: var(--opacitydark-30);    
+        --aci: var(--opacitydark-5);
         --ex: var(--black);
         --op: var(--black);
         i{

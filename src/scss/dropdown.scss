@@ -8,6 +8,12 @@
         transition: .5s;
         opacity: 1;
     }
+    &[data-dno="1"] &_body{
+        bottom: 100%; top: auto;
+    }
+    &:hover > .btn i {
+        transform: rotate(45deg);
+    }
     &:not(:hover) &_body{
         height: 0;
         opacity: 0;

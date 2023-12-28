@@ -1,0 +1,8 @@
+.wait{
+    &-come{
+        &.border-top:before, &.border-bottom:after{
+            width: 0;
+        }
+    }
+}
+

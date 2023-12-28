@@ -23,7 +23,7 @@ function init_faq(){
         let cl = this.closest('.main_faq');
         document.body.style.setProperty('background-color',null); 
         // и фон блока тоже деактиаируем
-        cl.classList.add('leaveHalf');
+        if(cl) cl.classList.add('leaveHalf');
     }
 
     let comesHandler = function(){
@@ -32,7 +32,7 @@ function init_faq(){
         if(cl){
             document.body.style.setProperty('background-color',cl.style.backgroundColor); 
         }
-        cl.classList.remove('leaveHalf');
+        if(cl) cl.classList.remove('leaveHalf');
         // console.log(this)
     }
 

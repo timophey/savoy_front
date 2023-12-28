@@ -17,11 +17,20 @@
                     .fs-12
                         | Свяжитесь с нами
                     .fs-32.fw-600.ff-playfair.fs-sm-40
-                        | +7 (495) 775 35 35
+                        a.link.link-accent(href="tel:+74957753535") +7 (495) 775 35 35
                 .d-flex.justify-space-between.py-half.d-sm-none
-                    a.button.btn.btn-secondary.button--calypso(data-popup="club")
-                        i.icon-Pluse
-                        span Выбрать клуб
+                    .dropdown(data-dno="1")
+                        a.button.btn.btn-secondary.button--calypso
+                            i.icon-Pluse
+                            span Выбрать клуб
+                        .dropdown_body.pb-half
+                            .bg-black.color-white.br-12.fs-10.text-nowrap.text-uppercase.filter-invert
+                                a(href="#").d-flex.align-items-center.g-half.p-1.pl-2.justify-space-between.bg-black.filter-hover-invert.nodecor.layoutHeader_club
+                                    span Чистые пруды
+                                    i.bg-opacitydark-10.icon-Arrow-top-right.filter-invert.br-6
+                                a(href="#").d-flex.align-items-center.g-half.p-1.pl-2.justify-space-between.bg-black.filter-hover-invert.nodecor.layoutHeader_club
+                                    span Новослободская
+                                    i.bg-opacitydark-10.icon-Arrow-top-right.filter-invert.br-6
                     .d-flex.g-1
                         a.control.control-social(href="//vk.com")
                             i.icon-VK

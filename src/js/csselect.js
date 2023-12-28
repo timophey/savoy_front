@@ -1,5 +1,6 @@
 function CSSelect(node){
     let rRoot = document.createElement('div'); rRoot.className = 'csselect';
+    let preventEvents = false;
     node.parentElement.append(rRoot);
 
     let rValue = document.createElement('div'); 
@@ -14,6 +15,8 @@ function CSSelect(node){
 
     let rList = document.createElement('div'); 
         rList.className = 'csselect-list';
+        addEventListener("transitionstart", (event) => { preventEvents=true; });
+        addEventListener("transitionend", (event) => { preventEvents=false; });
     rRoot.append(rList);
 
     let rTrigger = document.createElement('div');
@@ -33,6 +36,7 @@ function CSSelect(node){
         rItem.addEventListener('click',selectOne.bind(rItem,i));
         rItem.addEventListener('mousedown',selectOne.bind(rItem,i));
         rItem.addEventListener('touchstart',selectOne.bind(rItem,i));
+
         rList.append(rItem);
         return rItem;
     });
@@ -47,7 +51,8 @@ function CSSelect(node){
     }
 
     let actionExpand = function(){
-        // console.log('actionExpand')
+        if(preventEvents) return;
+        console.log('actionExpand')
         let bh = rList.scrollHeight;
 
         let rt = rRoot.getBoundingClientRect();
@@ -62,19 +67,28 @@ function CSSelect(node){
     }
 
     let actionCollapse = function(){
-        // console.log('actionCollapse')
+        if(preventEvents) return;
+        console.log('actionCollapse')
         rRoot.classList.remove('active');
         rList.style.setProperty('height',null);
     }
 
-    let actionToggle = function(){
-        // console.log('actionToggle')
+    let actionToggle = function(e){
+        if(preventEvents) return;
+        console.log('actionToggle',e.type)
         return rRoot.classList.contains('active') ? actionCollapse() : actionExpand();
     }
 
-    rRoot.addEventListener('click',actionToggle);
+    let handleBlur = function(e){
+        setTimeout(actionCollapse,146);
+        // ();
+    }
+
+    // открытие
+    rValue.addEventListener('click',actionToggle);
+
     node.addEventListener('change',valueFromOriginal);
-    node.addEventListener('blur',()=>setTimeout(actionCollapse,100));
+    node.addEventListener('blur',handleBlur);
 
     // node.style.setProperty('visibility','none');
 

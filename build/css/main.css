@@ -55,6 +55,7 @@
   top: 0;
   left: calc(var(--gap) / 2);
   border-top: 1px solid var(--opacitydark-20);
+  transition: width 1s linear 0.5s;
 }
 
 .row.border-bottom:after {
@@ -66,6 +67,7 @@
   bottom: 0;
   left: calc(var(--gap) / 2);
   border-bottom: 1px solid var(--opacitydark-20);
+  transition: width 1s linear 2.5s;
 }
 
 .row > [class^=col-],
@@ -2173,7 +2175,7 @@ body {
 .btn-dark.btn-primary:disabled,
 [data-theme=dark] .btn.btn-primary:disabled {
   --color-first: var(--opacitydark-20, rgba(0, 0, 0, 0.20));
-  border: var(--color-first);
+  border-color: transparent;
 }
 
 .btn-dark.btn-primary:disabled span,
@@ -2245,6 +2247,7 @@ body {
 [data-theme=light] .btn.btn-primary:disabled {
   --color-first: var(--opacitylight-20);
   --color-second: var(--opacitylight-40);
+  border-color: transparent;
 }
 
 .btn-light.btn-primary:disabled i,
@@ -2283,7 +2286,7 @@ body {
 }
 
 .button--calypso:hover:not(:active) {
-  transition: background-color 0.4s cubic-bezier(0.1, 0, 0.3, 1) 0.4s;
+  transition: background-color 0.4s cubic-bezier(0.1, 0, 0.3, 1) 0s;
 }
 
 .button--calypso:hover:not(:active).btn-secondary.btn-dark {
@@ -2415,7 +2418,7 @@ a:hover:not(.btn):not(.link-accent):not(.nodecor) {
 .link-accent {
   display: inline-block;
   position: relative;
-  line-height: 125%;
+  line-height: 160%;
   cursor: pointer;
   overflow: hidden;
   text-decoration: none;
@@ -2666,15 +2669,11 @@ p:first-child {
   z-index: 100;
 }
 
-.siteWrapper > header[data-theme=dark] {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1333333333);
-}
-
 .layoutHeader {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  padding: 12px 16px;
+  padding: 16px 0;
   box-sizing: border-box;
   -ms-flex-pack: justify;
       justify-content: space-between;
@@ -2791,7 +2790,9 @@ p:first-child {
 }
 
 .csselect-list {
-  background-color: var(--op);
+  background-color: var(--ex);
+  -webkit-filter: invert(1);
+          filter: invert(1);
   border-radius: 12px;
   position: absolute;
   top: calc(100% + 2px);
@@ -2800,7 +2801,7 @@ p:first-child {
   width: 100%;
   height: 0;
   overflow: hidden;
-  transition: 0.3s;
+  transition: 300ms;
 }
 
 .csselect-list[data-dno="1"] {
@@ -2819,18 +2820,22 @@ p:first-child {
 
 .csselect-item {
   padding: 12px 16px;
-  background-color: var(--bg);
 }
 
-.csselect-item:hover {
-  background-color: var(--hw);
+.csselect.active .csselect-item {
+  background-color: var(--bgi);
 }
 
-.csselect-item.active {
+.csselect.active .csselect-item.active {
   background-color: var(--ac);
 }
 
+.csselect.active .csselect-item:hover {
+  background-color: var(--hw);
+}
+
 .csselect.active .csselect-value {
+  /*, &.active &-item*/
   background: var(--ex);
   -webkit-filter: invert(1);
           filter: invert(1);
@@ -2841,8 +2846,17 @@ p:first-child {
   --bg: var(--opacitydark-10);
   --hw: var(--opacitydark-20);
   --ac: var(--opacitydark-5);
+  --bgi: var(--opacitylight-10);
+  --hwi: var(--opacitylight-20);
+  --aci: var(--opacitylight-5);
   --ex: var(--white);
   --op: var(--white);
+}
+
+[data-theme=dark] .csselect-list,
+.csselect-dark .csselect-list {
+  -webkit-filter: invert(1);
+          filter: invert(1);
 }
 
 [data-theme=light] .csselect,
@@ -2850,6 +2864,9 @@ p:first-child {
   --bg: var(--opacitylight-20);
   --hw: var(--opacitylight-30);
   --ac: var(--opacitylight-5);
+  --bgi: var(--opacitydark-20);
+  --hwi: var(--opacitydark-30);
+  --aci: var(--opacitydark-5);
   --ex: var(--black);
   --op: var(--black);
 }
@@ -2910,8 +2927,10 @@ p:first-child {
   outline: none;
 }
 
-.csinput input:invalid {
-  outline: red solid 1px;
+.csinput-invalid {
+  padding: 0 16px;
+  font-size: 10px;
+  line-height: 200%;
 }
 
 .csinput.active {
@@ -2928,18 +2947,26 @@ p:first-child {
   background-color: var(--bg);
   border-radius: 12px;
   text-transform: uppercase;
+  width: auto;
 }
 
 .csinput[data-dirty="1"] .csinput-label,
 input:focus + .csinput-label {
-  font: 400 10px/20px Montserrat;
+  font: 400 10px/16px Montserrat;
   width: auto;
   height: auto;
   left: 10px;
-  top: -10px;
+  top: -8px;
   padding: 0 6px;
   border-radius: 0;
-  text-transform: none;
+}
+
+.csinput[data-invalid="0"] {
+  border-color: var(--actiondanger-heavy);
+}
+
+.csinput[data-invalid="1"] .csinput-invalid {
+  display: none;
 }
 
 [data-theme=dark] .csinput,
@@ -3000,6 +3027,15 @@ input:focus + .csinput-label {
   opacity: 1;
 }
 
+.dropdown[data-dno="1"] .dropdown_body {
+  bottom: 100%;
+  top: auto;
+}
+
+.dropdown:hover > .btn i {
+  transform: rotate(45deg);
+}
+
 .dropdown:not(:hover) .dropdown_body {
   height: 0;
   opacity: 0;
@@ -3042,7 +3078,7 @@ body:not([data-popup-opened]) .hasHero header[data-theme=light] .btn i {
 }
 
 .hero.hero_underground {
-  margin-top: -64px;
+  margin-top: -72px;
   position: relative;
   height: 100vh;
   max-height: 768px;
@@ -3190,6 +3226,11 @@ body:not([data-popup-opened]) .hasHero header[data-theme=light] .btn i {
 
 .cs_slider.csslider .cs_slider_navitem:not(.active) {
   color: var(--opacitydark-40);
+}
+
+.wait-come.border-top:before,
+.wait-come.border-bottom:after {
+  width: 0;
 }
 
 @media screen and (min-width: 0) {
@@ -4540,16 +4581,23 @@ body:not([data-popup-opened]) .hasHero header[data-theme=light] .btn i {
     content: "";
     display: block;
     background-color: var(--opacitydark-20);
-    width: 50%;
+    width: calc(50% - var(--gap) / 2 + 16px);
     height: 1px;
     left: calc(var(--gap) / 2);
     top: 0;
     position: absolute;
+    transition: 0.5s linear 1s;
   }
 
   .layoutFooter > .row:first-child::after {
     top: auto;
     bottom: 0;
+    transition: 0.5s linear 1.5s;
+  }
+
+  .layoutFooter > .row:first-child.wait-come::before,
+  .layoutFooter > .row:first-child.wait-come::after {
+    width: 0;
   }
 
   .main_article_picture {
@@ -5942,6 +5990,11 @@ body:not([data-popup-opened]) .hasHero header[data-theme=light] .btn i {
     top: 0;
     right: calc(var(--gap) / 2);
     background-color: var(--opacitydark-20);
+    transition: height 1s linear 1.5s;
+  }
+
+  .wait-come .main_places_preview:after {
+    height: 0;
   }
 
   .main_article_picture {

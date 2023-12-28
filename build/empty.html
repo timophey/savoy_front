@@ -14,10 +14,10 @@
           <div class="layoutHeader">
             <div class="d-flex g-3"><a class="layoutHeader_logo" href="/"></a>
               <div class="d-none d-sm-flex g-2 align_items-center">
-                <div class="layoutHeader_phone">+7 (495) 775 35 35</div>
+                <div class="layoutHeader_phone"><a class="link link-accent" href="tel:+74957753535">+7 (495) 775 35 35</a></div>
                 <div class="dropdown"><a class="button btn btn-secondary button--calypso dropdown_trigger"><i class="icon-Pluse"></i><span>Выбрать клуб</span></a>
                   <div class="dropdown_body pt-half">
-                    <div class="bg-black color-white br-12 fs-10 text-nowrap text-uppercase"><a class="d-flex align-items-center g-half p-1 pl-2 justify-space-between bg-black filter-hover-invert layoutHeader_club" href="#"><span>Чистые пруды</span><i class="bg-opacitydark-10 icon-Arrow-top-right filter-invert br-6"></i></a><a class="d-flex align-items-center g-half p-1 pl-2 justify-space-between bg-black filter-hover-invert layoutHeader_club" href="#"><span>Новослободская</span><i class="bg-opacitydark-10 icon-Arrow-top-right filter-invert br-6"></i></a></div>
+                    <div class="bg-black color-white br-12 fs-10 text-nowrap text-uppercase"><a class="d-flex align-items-center g-half p-1 pl-2 justify-space-between bg-black filter-hover-invert nodecor layoutHeader_club" href="#"><span>Чистые пруды</span><i class="bg-opacitydark-10 icon-Arrow-top-right filter-invert br-6"></i></a><a class="d-flex align-items-center g-half p-1 pl-2 justify-space-between bg-black filter-hover-invert nodecor layoutHeader_club" href="#"><span>Новослободская</span><i class="bg-opacitydark-10 icon-Arrow-top-right filter-invert br-6"></i></a></div>
                   </div>
                 </div>
               </div>
@@ -32,7 +32,7 @@
       <footer data-theme="dark">
         <div class="container">
           <div class="layoutFooter py-2 d-flex flex-column g-3 font-size-12">
-            <div class="row">
+            <div class="row wait-come">
               <div class="col-3 col-sm-2 col-lg-3 fs-15 py-2 d-flex flex-column g-3">
                 <div class="d-flex flex-column g-2">
                   <h3 class="my-0 header_hidden_top">Quis autem vel eum iure reprehenderit</h3>
@@ -71,9 +71,14 @@
             <footer class="d-flex flex-column g-4">
               <div class="d-flex flex-column g-1">
                 <div class="fs-12">Свяжитесь с нами</div>
-                <div class="fs-32 fw-600 ff-playfair fs-sm-40">+7 (495) 775 35 35</div>
+                <div class="fs-32 fw-600 ff-playfair fs-sm-40"><a class="link link-accent" href="tel:+74957753535">+7 (495) 775 35 35</a></div>
               </div>
-              <div class="d-flex justify-space-between py-half d-sm-none"><a class="button btn btn-secondary button--calypso" data-popup="club"><i class="icon-Pluse"></i><span>Выбрать клуб</span></a>
+              <div class="d-flex justify-space-between py-half d-sm-none">
+                <div class="dropdown" data-dno="1"><a class="button btn btn-secondary button--calypso"><i class="icon-Pluse"></i><span>Выбрать клуб</span></a>
+                  <div class="dropdown_body pb-half">
+                    <div class="bg-black color-white br-12 fs-10 text-nowrap text-uppercase filter-invert"><a class="d-flex align-items-center g-half p-1 pl-2 justify-space-between bg-black filter-hover-invert nodecor layoutHeader_club" href="#"><span>Чистые пруды</span><i class="bg-opacitydark-10 icon-Arrow-top-right filter-invert br-6"></i></a><a class="d-flex align-items-center g-half p-1 pl-2 justify-space-between bg-black filter-hover-invert nodecor layoutHeader_club" href="#"><span>Новослободская</span><i class="bg-opacitydark-10 icon-Arrow-top-right filter-invert br-6"></i></a></div>
+                  </div>
+                </div>
                 <div class="d-flex g-1"><a class="control control-social" href="//vk.com"><i class="icon-VK"></i></a><a class="control control-social" href="//vk.com"><i class="icon-Whatsapp"></i></a></div>
               </div>
             </footer>
@@ -97,10 +102,10 @@
                     </select>
                   </div>
                   <div class="form-field">
-                    <input class="form-input" type="text" placeholder="Ваше имя">
+                    <input class="form-input" type="text" placeholder="Ваше имя" required>
                   </div>
                   <div class="form-field">
-                    <input class="form-input" type="text" placeholder="Телефон">
+                    <input class="form-input" type="text" placeholder="Телефон" name="phone" required>
                   </div>
                 </div>
                 <div class="form-field text-center">

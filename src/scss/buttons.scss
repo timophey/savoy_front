@@ -76,7 +76,7 @@
         &.btn-primary:disabled{
             // --color-first: red;
             --color-first: var(--opacitydark-20, rgba(0, 0, 0, 0.20));
-            border: var(--color-first);
+            border-color: transparent;
             span{
                 color: var(--white);
                 mix-blend-mode: initial;
@@ -127,6 +127,7 @@
             &:disabled{
                 --color-first: var(--opacitylight-20);
                 --color-second: var(--opacitylight-40);
+                border-color: transparent;
                 i{
                     background-color: var(--color-second);
                     filter: invert(0);
@@ -176,7 +177,7 @@
 .button--calypso:hover:not(:active){
     // border: 1px solid var(--opacitylight-20, rgba(0, 0, 0, 0.20));
     // background-color: 1px solid var(--opacitylight-20, rgba(0, 0, 0, 0.20));
-    transition: background-color 0.4s cubic-bezier(0.1, 0, 0.3, 1) 0.4s;
+    transition: background-color 0.4s cubic-bezier(0.1, 0, 0.3, 1) 0s;
     &.btn-secondary.btn-dark{
         // transition-delay: 0s;
         transition-duration: 0s;
