@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="css/main.css")
+        script(src="js/vendor.js") 
+        script(src="js/main.js") 
+        title Savoy Main With Video
+    body()
+        .siteWrapper.d-flex.flex-column.justify-space-between.min-vh-100.hasHero
+            include blocks/layout_header
+            include blocks/main_hero_video
+            include blocks/layout_footer

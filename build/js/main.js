@@ -756,6 +756,9 @@ document.addEventListener('DOMContentLoaded', function () {
     return new CSCome(el);
   });
 });
+document.addEventListener('DOMContentLoaded', function () {
+  window.dispatchEvent(new Event('scroll'));
+});
 var initSmooth = function initSmooth() {
   SmoothScroll({
     // Время скролла 400 = 0.4 секунды

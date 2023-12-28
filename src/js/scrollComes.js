@@ -22,3 +22,7 @@ function CSCome(node){
 document.addEventListener('DOMContentLoaded',()=>{
     document.querySelectorAll('.wait-come').forEach(el => new CSCome(el));
 });
+
+document.addEventListener('DOMContentLoaded',()=>{
+    window.dispatchEvent(new Event('scroll'));
+});
