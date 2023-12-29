@@ -29,6 +29,9 @@ $_CSSAR: (
     }
     &.csslider &_navitem:not(.active){
         color: var(--opacitydark-40);
+        &:hover{
+            color: var(--opacitydark-80);
+        }
     }
     @each $name, $min, $size, $ratio in $_CSSAR{
         @media screen and (min-width: $min){

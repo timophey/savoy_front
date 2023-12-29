@@ -3248,6 +3248,10 @@ body:not([data-popup-opened]) .hasHero header[data-theme=light] .btn i {
   color: var(--opacitydark-40);
 }
 
+.cs_slider.csslider .cs_slider_navitem:not(.active):hover {
+  color: var(--opacitydark-80);
+}
+
 .wait-come.border-top:before,
 .wait-come.border-bottom:after {
   width: 0;
