@@ -2640,7 +2640,8 @@ img.hover-scale-105 {
 }
 
 img.hover-scale-105:hover,
-*:hover > img.hover-scale-105 {
+*:hover > img.hover-scale-105,
+a:hover img.hover-scale-105 {
   transform: scale(1.05);
 }
 
@@ -2703,6 +2704,13 @@ p:first-child {
 
 .layoutHeader_club {
   min-width: 256px;
+}
+
+.layoutHeader_phone {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
 }
 
 .layoutFooter nav {
@@ -3009,8 +3017,16 @@ input:focus + .csinput-label {
   overflow: hidden;
 }
 
+.header_hidden_top span.cshh span {
+  display: block;
+}
+
 .header_hidden_top span.cshh-hidden span {
   transform: translateY(100%);
+}
+
+.header_hidden_top span.cshh-done {
+  overflow: visible;
 }
 
 .dropdown {
@@ -3150,6 +3166,10 @@ body:not([data-popup-opened]) .hasHero header[data-theme=light] .btn i {
 .main_article .simpleParallax {
   height: 100%;
   width: 100%;
+}
+
+.main_cards a:hover {
+  text-decoration: none !important;
 }
 
 .main_map .br-16 {

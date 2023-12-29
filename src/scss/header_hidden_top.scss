@@ -5,10 +5,16 @@
         transition: .3s ease .5s;
         &.cshh{
             overflow: hidden;
+            span{
+                display: block;
+            }
             &-hidden{
                 span{
                     transform: translateY(100%);
                 }
+            }
+            &-done{
+                overflow: visible;
             }
         }
     }

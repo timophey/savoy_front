@@ -34,6 +34,12 @@ function CSHHTop(node){
         //     console.log(this.innerText,`${by} < ${wh}`,by < wh,'bb',bb,'bb > 64',bb > 64)
     }
 
+    // addEventListener("transitionend", (event) => { preventEvents=false; });
+    let transitionEndHandler = function(e){
+        // console.log(transitionEndHandler,e.target)
+        // e.target.parentElement.classList.add('cshh-done');
+    }
+
     textNodes.forEach(nd => {
         let words = nd.textContent.split(' ');
         // console.log(words)
@@ -44,9 +50,9 @@ function CSHHTop(node){
                 wrap0.className = 'cshh cshh-hidden';
                 wrap0.addEventListener('comes',spanComesHandler.bind(wrap0,i));
             let wrap1 = document.createElement('span');
-                // wrap1.style.display='inline-block';  // moved to css
                 wrap1.innerText = sw;
                 wrap0.append(wrap1);
+                wrap1.addEventListener("transitionend", transitionEndHandler);
             nd.parentElement.insertBefore(wrap0, nd);
             // wrap0.append()
             if(i < (ar.length -1)){
